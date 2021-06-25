@@ -1,7 +1,19 @@
 {
   "packageDirectories": [
     {
-      "path": "force-app",
+      "path": "rflib",
+      "default": false
+    },
+    {
+      "path": "rflib-fs",
+      "default": false
+    },
+    {
+      "path": "sfpczTrigger",
+      "default": false
+    },
+    {
+      "path": "veygo-app",
       "default": true
     }
   ],
