@@ -4,19 +4,19 @@ mkdir deployTemp -p
 
 while [ ! -n "$ORG_NAME"  ] 
 do
-	echo "Please enter target environment name"
+	echo -e "\e[35mPlease enter target environment name \e[0m"
 	read ORG_NAME
 done
 echo ""
 while [ ! -n "$CHECK_ONLY"  ] 
 do
-	echo "Check only? Y/N: "
+	echo -e "\e[35mCheck only? Y/N:  \e[0m"
 	read CHECK_ONLY
 done
 echo ""
 while [ ! -n "$RUN_TEST_CLASS"  ] 
 do
-	echo "Run Test Classes? Y/N: "
+	echo -e "\e[35mRun Test Classes? Y/N: \e[0m"
 	read RUN_TEST_CLASS
 done
 echo ""
@@ -25,14 +25,15 @@ LAST_TAG=`git describe --tags --abbrev=0`
 while [ ! -n "$TAG"  ] 
 do
     
-	echo "Last deployment tag name ($LAST_TAG): (y or type the tag) "
+	echo -e "\e[35mLast deployment tag name (\e[0m\e[100m$LAST_TAG\e[0m\e[35m): (y or type the tag)\e[0m"
 	read TAG
 done
 
 if [[ $TAG == "y" || $TAG == "Y" ]]; then
     TAG=$LAST_TAG
 fi
-echo $TAG
+echo
+echo -e "\e[34mSelected tag \e[0m\e[100m$TAG\e[0m"
 
 echo ""
 
@@ -66,10 +67,12 @@ fi
 if [[ $RUN_TEST_CLASS == "y" || $RUN_TEST_CLASS == "Y" ]]; then
     COMMAND="$COMMAND--testlevel RunLocalTests "
 fi
+echo -e "\e[1m\e[32m"
 echo $COMMAND
+echo -e "\e[0m"
 bash -c $COMMAND
 
-echo ""
+
 
 rm -r deployTemp/*
 IFS=$ifsBackup
