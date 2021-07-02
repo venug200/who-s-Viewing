@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Integration PermissionGroup</label>
+    <permissionSets>FinServ__InsuranceAccess</permissionSets>
+    <permissionSets>Integration</permissionSets>
+    <permissionSets>force__FSCInsurance</permissionSets>
+    <permissionSets>rflib_Enable_Client_Feature_Switches</permissionSets>
+    <permissionSets>rflib_Enable_Client_Logging</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
