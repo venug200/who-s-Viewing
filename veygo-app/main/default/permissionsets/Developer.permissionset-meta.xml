@@ -4,6 +4,26 @@
         <application>Veygo_Console</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>sfpcz_AbstractTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>sfpcz_AbstractTriggerHandlerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>sfpcz_TriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>sfpcz_TriggersController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>sfpcz_TriggersControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description>Permission set for developer and admin</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Developer</label>
