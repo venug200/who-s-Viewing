@@ -6,7 +6,7 @@
     <label>Policy Payment Method</label>
     <referenceTo>FinServ__PolicyPaymentMethod__c</referenceTo>
     <relationshipLabel>Cases</relationshipLabel>
-    <relationshipName>Cases</relationshipName>
+    <relationshipName>RelatedCases</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
