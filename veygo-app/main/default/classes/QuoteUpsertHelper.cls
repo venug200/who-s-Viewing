@@ -43,7 +43,7 @@ public with sharing class QuoteUpsertHelper {
 				//handling of the errors
 				logger.error('processQuoteUpsert() : 400 returned, stage event not specified');
 				Map<String, String> responseBody = new Map<String, String>();
-				responseBody.put('error', 'processQuoteUpsert() : 400 returned, stage event not specified');
+				responseBody.put('error', 'processQuoteUpsert() : 400 returned, stage (eventType) not specified');
 				this.response.statusCode = 400;
 				this.response.responseBody = Blob.valueOf(JSON.serializePretty(responseBody));
 			}
