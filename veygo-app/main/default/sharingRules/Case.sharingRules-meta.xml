@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Agents</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Agents</label>
+        <sharedTo>
+            <role>Agent</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Complaint,Question,Problem,Task,Incident,Claim</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

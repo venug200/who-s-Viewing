@@ -3,27 +3,19 @@
     <fullName>FinServ__Opportunity Process</fullName>
     <isActive>true</isActive>
     <values>
-        <fullName>Client Presentation</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Closed Lost</fullName>
-        <default>false</default>
-    </values>
-    <values>
         <fullName>Closed Won</fullName>
         <default>false</default>
     </values>
     <values>
-        <fullName>Develop Proposal</fullName>
+        <fullName>Full Quote</fullName>
         <default>false</default>
     </values>
     <values>
-        <fullName>Initiate Transfer</fullName>
+        <fullName>Indicative Quote</fullName>
         <default>false</default>
     </values>
     <values>
-        <fullName>Qualification</fullName>
+        <fullName>Quote Start</fullName>
         <default>false</default>
     </values>
 </BusinessProcess>

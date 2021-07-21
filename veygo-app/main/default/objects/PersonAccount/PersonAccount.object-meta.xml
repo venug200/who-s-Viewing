@@ -3,5 +3,5 @@
     <compactLayoutAssignment>Person_Account_Layout</compactLayoutAssignment>
     <enableHistory>false</enableHistory>
     <externalSharingModel>Private</externalSharingModel>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
 </CustomObject>

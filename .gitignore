@@ -1,1 +1,5 @@
 .sfdx/
+.sfdx/*
+.sfdx/sfdx-config.json
+.vim-force.com/
+

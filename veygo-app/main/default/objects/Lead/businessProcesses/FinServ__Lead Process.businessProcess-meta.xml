@@ -4,23 +4,15 @@
     <description>Consumer lead</description>
     <isActive>true</isActive>
     <values>
-        <fullName>New</fullName>
+        <fullName>Full Quote</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Indicative Quote</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Quote Start</fullName>
         <default>true</default>
-    </values>
-    <values>
-        <fullName>Nurturing - Contacted</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Qualified</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Unqualified</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Working - Contacted</fullName>
-        <default>false</default>
     </values>
 </BusinessProcess>
