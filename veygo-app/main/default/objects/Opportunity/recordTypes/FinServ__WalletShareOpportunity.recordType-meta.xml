@@ -39,25 +39,24 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Loss_Reason__c</picklist>
+        <picklist>Package_Type__c</picklist>
         <values>
-            <fullName>Lost to Competitor</fullName>
+            <fullName>Classic</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>No Budget %2F Lost Funding</fullName>
+            <fullName>Pro</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Method__c</picklist>
+        <values>
+            <fullName>Per Month</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>No Decision %2F Non-Responsive</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Other</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Price</fullName>
+            <fullName>Per Year</fullName>
             <default>false</default>
         </values>
     </picklistValues>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>License Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>type 1</fullName>
+                <default>false</default>
+                <label>type 1</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

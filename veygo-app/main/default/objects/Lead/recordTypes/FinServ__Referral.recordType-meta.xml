@@ -199,6 +199,13 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>License_Type__c</picklist>
+        <values>
+            <fullName>type 1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Name</picklist>
         <values>
             <fullName>Dr%2E</fullName>
@@ -218,6 +225,28 @@
         </values>
         <values>
             <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Package_Type__c</picklist>
+        <values>
+            <fullName>Classic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pro</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Method__c</picklist>
+        <values>
+            <fullName>Per Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per Year</fullName>
             <default>false</default>
         </values>
     </picklistValues>

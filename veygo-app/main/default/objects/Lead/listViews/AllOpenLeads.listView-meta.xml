@@ -13,10 +13,5 @@
     <columns>CORE.USERS.LAST_NAME</columns>
     <columns>LEAD.CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>LEAD.STATUS</field>
-        <operation>notEqual</operation>
-        <value>Qualified</value>
-    </filters>
-    <label>All Open Leads</label>
+    <label>All Open Leads and Referrals</label>
 </ListView>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProblemType__c</fullName>
+    <externalId>false</externalId>
+    <label>Problem Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Crif call failure</fullName>
+                <default>false</default>
+                <label>Crif call failure</label>
+            </value>
+            <value>
+                <fullName>Driver/Owner Name</fullName>
+                <default>false</default>
+                <label>Driver/Owner Name</label>
+            </value>
+            <value>
+                <fullName>Help Center Feedback</fullName>
+                <default>false</default>
+                <label>Help Center Feedback</label>
+            </value>
+            <value>
+                <fullName>Mylicense Error 404</fullName>
+                <default>false</default>
+                <label>Mylicense Error 404</label>
+            </value>
+            <value>
+                <fullName>Mylicense MC/MAC</fullName>
+                <default>false</default>
+                <label>Mylicense MC/MAC</label>
+            </value>
+            <value>
+                <fullName>New Registration</fullName>
+                <default>false</default>
+                <label>New Registration</label>
+            </value>
+            <value>
+                <fullName>One account per driver</fullName>
+                <default>false</default>
+                <label>One account per driver</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Password</fullName>
+                <default>false</default>
+                <label>Password</label>
+            </value>
+            <value>
+                <fullName>Payment</fullName>
+                <default>false</default>
+                <label>Payment</label>
+            </value>
+            <value>
+                <fullName>Payment Method</fullName>
+                <default>false</default>
+                <label>Payment Method</label>
+            </value>
+            <value>
+                <fullName>QE Messaging</fullName>
+                <default>false</default>
+                <label>QE Messaging</label>
+            </value>
+            <value>
+                <fullName>Reg not recognized</fullName>
+                <default>false</default>
+                <label>Reg not recognized</label>
+            </value>
+            <value>
+                <fullName>Technical</fullName>
+                <default>false</default>
+                <label>Technical</label>
+            </value>
+            <value>
+                <fullName>Third party technical</fullName>
+                <default>false</default>
+                <label>Third party technical</label>
+            </value>
+            <value>
+                <fullName>Upgrade license issue</fullName>
+                <default>false</default>
+                <label>Upgrade license issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
