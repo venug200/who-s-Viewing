@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ProductType__c</fullName>
     <externalId>false</externalId>
-    <formula>TEXT(PolicyId__r.ProductType__c)</formula>
+    <formula>TEXT(PolicyPaymentMethodId__r.ProductType__c)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Product Type</label>
     <required>false</required>
