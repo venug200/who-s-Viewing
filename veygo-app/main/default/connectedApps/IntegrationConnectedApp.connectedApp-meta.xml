@@ -6,7 +6,6 @@
         <callbackUrl>https://www.getpostman.com/oauth2/callback
 https://login.salesforce.com/services/oauth2/callback
 https://test.salesforce.com/services/oauth2/callback</callbackUrl>
-        <consumerKey></consumerKey>
         <isAdminApproved>false</isAdminApproved>
         <isConsumerSecretOptional>false</isConsumerSecretOptional>
         <isIntrospectAllTokens>false</isIntrospectAllTokens>

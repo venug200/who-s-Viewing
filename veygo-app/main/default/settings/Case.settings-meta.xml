@@ -32,7 +32,6 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>matteo.iacucci@emea.merkleinc.com</emailAddress>
-            <emailServicesAddress>matte.iacucci@5pwucg6d3s6bflgrepd8e1eudxsoinc5cq7s7kngqgpnir03m.8e-gbixuaw.cs87.case.sandbox.salesforce.com</emailServicesAddress>
             <isVerified>true</isVerified>
             <routingName>Contact@Veygo</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>

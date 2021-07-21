@@ -23,14 +23,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>QuoteToBuyDTO</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>QuoteToBuyDTO_Test</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>QuoteUpsertDTO</apexClass>
         <enabled>false</enabled>
     </classAccesses>
