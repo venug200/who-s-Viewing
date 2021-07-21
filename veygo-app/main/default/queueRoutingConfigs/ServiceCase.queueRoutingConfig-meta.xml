@@ -6,5 +6,4 @@
     <pushTimeout>30</pushTimeout>
     <routingModel>LEAST_ACTIVE</routingModel>
     <routingPriority>1</routingPriority>
-    <userOverflowAssignee>matteo.iacucci@merkleinc.com.veygo</userOverflowAssignee>
 </QueueRoutingConfig>
