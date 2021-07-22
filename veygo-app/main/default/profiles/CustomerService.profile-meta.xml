@@ -952,7 +952,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.PolicyId__c</field>
+        <field>Case.PolicyPaymentMethodId__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
