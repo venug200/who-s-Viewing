@@ -8,12 +8,10 @@
 public with sharing class QuoteUpsertService {
 
 	private rflib_Logger logger;
-	private ContactSelector contactSelector;
 	private AccountSelector accountSelector;
 
 	public QuoteUpsertService() {
 		this.logger = rflib_LoggerUtil.getFactory().createLogger('QuoteToBuyService');
-		this.contactSelector = new ContactSelector();
 		this.accountSelector = new AccountSelector();
 	}
 
@@ -28,7 +26,7 @@ public with sharing class QuoteUpsertService {
 		String leadField;
 		String leadTypeField;
 		for(String k : m.keySet()){
-			leadField = QuestionUpsertMapper.leadMap.get(k);
+			leadField = QuoteUpsertMapper.leadMap.get(k);
 			if(leadField == null) continue;
 			
 			l.put(leadField, m.get(k));

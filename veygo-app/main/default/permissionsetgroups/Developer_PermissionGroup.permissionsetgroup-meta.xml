@@ -5,6 +5,7 @@
     <permissionSets>Config_CDS</permissionSets>
     <permissionSets>Developer</permissionSets>
     <permissionSets>FinServ__ApexAuraAccess</permissionSets>
+    <permissionSets>SFPCZ</permissionSets>
     <permissionSets>force__FSCInsurance</permissionSets>
     <permissionSets>rflib_Enable_Client_Feature_Switches</permissionSets>
     <permissionSets>rflib_Enable_Client_Logging</permissionSets>
