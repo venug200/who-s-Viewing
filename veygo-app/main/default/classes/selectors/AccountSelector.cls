@@ -21,7 +21,7 @@ public with sharing class AccountSelector {
 			
 				account = [SELECT Id
 						FROM Account
-						WHERE Customer_Id__pc = :customerId 
+						WHERE CustomerId__c = :customerId 
 					];
 			}else{
 				logger.error('getAccountByCustomerId(): User (userid: {0}) has no access right to Account', new List<Object> {String.valueOf(UserInfo.getUserId())});

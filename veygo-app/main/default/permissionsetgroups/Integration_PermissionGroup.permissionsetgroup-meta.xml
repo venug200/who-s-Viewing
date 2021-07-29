@@ -3,6 +3,7 @@
     <label>Integration PermissionGroup</label>
     <permissionSets>FinServ__InsuranceAccess</permissionSets>
     <permissionSets>Integration</permissionSets>
+    <permissionSets>SFPCZ</permissionSets>
     <permissionSets>force__FSCInsurance</permissionSets>
     <permissionSets>rflib_Enable_Client_Feature_Switches</permissionSets>
     <permissionSets>rflib_Enable_Client_Logging</permissionSets>

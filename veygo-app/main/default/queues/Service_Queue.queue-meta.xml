@@ -4,7 +4,6 @@
     <name>Service Queue</name>
     <queueMembers>
         <users>
-            <user>dsego@merkleinc.com.veygo</user>
             <user>matteo.iacucci@emea.merkleinc.com.veygo</user>
         </users>
     </queueMembers>
