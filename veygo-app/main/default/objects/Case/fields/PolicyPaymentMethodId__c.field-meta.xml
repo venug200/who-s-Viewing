@@ -5,8 +5,8 @@
     <externalId>false</externalId>
     <label>Policy Payment Method</label>
     <referenceTo>FinServ__PolicyPaymentMethod__c</referenceTo>
-    <relationshipLabel>Cases</relationshipLabel>
-    <relationshipName>Cases</relationshipName>
+    <relationshipLabel>Related Cases</relationshipLabel>
+    <relationshipName>Related_Cases</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
