@@ -1,10 +1,10 @@
 /**
- * QuoteUpsertDTO 
- * @author  Matteo Iacucci
- * @version 1.0
- * @since   2021-07-13
-*/
-
+ * @description       : 
+ * @author            : matteo.iacucci@emea.merkleinc.com
+ * @group             : 
+ * @last modified on  : 2021-07-29
+ * @last modified by  : matteo.iacucci@emea.merkleinc.com
+**/
 public with sharing class QuoteUpsertDTO {
 
     public String customerId;

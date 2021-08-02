@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-07-29
+ * @last modified on  : 2021-08-02
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
  * Modifications Log 
  * Ver   Date         Author                              Modification
@@ -19,6 +19,101 @@ public with sharing class QuoteUpsertMapper {
 		'dob' => 'DOB__c',
 		'ownerDriver' => 'Owner_Driver__c'
 	};
+
+	public static Map<String, String> quoteStartLeadMapping = new Map<String, String>{
+		'product' => 'Product_Name__c',
+ 		'quoteId' => 'Quote_Number__c',
+ 		'licenceType' => 'License_Type__c',
+ 		'postcode' => 'Postcode__c',
+ 		'dateOfBirth' => 'DriverDateOfBirth__c'
+ 	};
+
+	public static Map<String, String> quoteUpdateLeadMapping = new Map<String, String>{
+		'product' => 'Product_Name__c', //LDP, OTC, DTC
+		'quoteId' => 'Quote_Number__c',
+		'startDate' => 'Quote_Date__c',
+		'endDate' => 'QuoteEnd__c',
+		'policyNumber' => 'Policy_Number__c',
+		'documentDeliveryPreference' => 'DocumentDeliveryPreferrence__c',
+		'purchased' => 'Purchased__c'
+		
+	};
+
+	public static Map<String, String> quoteUpdateOwnerLeadMapping = new Map<String, String>{
+		'firstName' => 'OwnerFirstName__c',
+		'lastName' => 'OwnerLastName__c',
+		'email' => 'OwnerEmail__c',
+		'phoneNumber' => 'OwnerPhone__c',
+		'dateOfBirth' => 'OwnerDateOfBirth__c',
+		'occupationType' => 'OwnerOccupationType__c',
+		'occupation' => 'OwnerOccupation__c',
+		'postcode' => 'Owner_PostCode__c',
+		'relationship' => 'Owner_Relationship__c'
+	};
+
+	public static Map<String, String> quoteUpdateDriverAddressLeadMapping = new Map<String, String>{
+		'flatNo' => 'DriverAddressFlatNum__c',
+		'houseNo' => 'DriverAddressHouseNum__c',
+		'houseName' => 'DriverAddressHouseName__c',
+		'line1' => 'DriverAddressLine1__c',
+		'line2' => 'DriverAddressLine2__c',
+		'road' => 'DriverAddressRoad__c',
+		'town' => 'DriverAddressTown__c',
+		'county' => 'DriverAddressCounty__c',
+		'country' => 'DriverAddressCountry__c',
+		'postcode' => 'DriverAddressPostcode__c'
+	};
+
+
+	public static Map<String, String> quoteUpdateCarLeadMapping = new Map<String, String>{
+		
+		'make' => 'CarMake__c',
+		'model' => 'CarModel__c',
+		'transmission' => 'Car_Trasmission__c',
+		'year' => 'Year__c',
+		'value' => 'CarValue__c',
+		'engineSize' => 'Car_Engine_Size__c',
+		'insuranceGroup' => 'Car_Insurance_Group__c',
+		'mainInsurer' => 'CarMainInsurer__c'
+	};
+
+	public static Map<String, String> quoteUpdateFinancialsLeadMapping = new Map<String, String>{
+		
+		'initialPrice' => 'Insurance_Initial_Price__c',
+		'price' => 'Insurance_Price__c',
+		'priceBeforeTax' => 'Insurance_Price_Before_Tax__c',
+		'tax' => 'Insurance_Permium_Tax__c',
+		'excess' => 'Excess__c',
+		'discountCode' => 'DiscountCode__c'
+	};
+
+	public static Map<String, String> quoteUpdateUnderwritingLeadMapping = new Map<String, String>{
+		'passed' => 'Underwriting_Passed__c',
+		'failureReasons' => 'UnderwritingFailureReasons__c'
+	};
+
+	public static Map<String, String> quoteUpdateDriverLeadMapping = new Map<String, String>{
+		'title' => 'DriverTitle__c',
+		'firstName' => 'DriverFirstName__c',
+		'middleName' => 'DriverMiddleName__c',
+		'lastName' => 'DriverLastName__c',
+		'email' => 'DriverEmail__c',
+		'phoneNumber' => 'DriverPhoneNumber__c',
+		'dateOfBirth' => 'DriverDateOfBirth__c',
+		'occupationType' => 'DriverOccupationType__c',
+		'occupation' => 'DriverOccupation__c',
+		'licenceType' => 'LicenceType__c', //UKM, UKA, UKP, NUK
+		'licenceCountry' => 'LicenceCountry__c',
+		'licenceNumber' => 'License_Number__c',
+		'numberOfClaims' => 'NumberOfClaims__c',
+		'hasConvictions' => 'HasConvictions__c',
+		'yearsNCB' => 'Years_NCB__c'
+	};
+	
+
+	
+
+
 
 	  
 }

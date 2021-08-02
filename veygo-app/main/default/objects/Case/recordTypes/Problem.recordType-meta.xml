@@ -57,6 +57,21 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Outcome__c</picklist>
+        <values>
+            <fullName>No concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspended Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspended and Cancellation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Priority</picklist>
         <values>
             <fullName>High</fullName>
