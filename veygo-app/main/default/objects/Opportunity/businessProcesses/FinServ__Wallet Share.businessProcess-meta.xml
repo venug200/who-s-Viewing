@@ -3,27 +3,11 @@
     <fullName>FinServ__Wallet Share</fullName>
     <isActive>true</isActive>
     <values>
-        <fullName>Client Presentation</fullName>
-        <default>false</default>
-    </values>
-    <values>
         <fullName>Closed Lost</fullName>
         <default>false</default>
     </values>
     <values>
         <fullName>Closed Won</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Develop Proposal</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Discovery</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Initiate Transfer</fullName>
         <default>false</default>
     </values>
 </BusinessProcess>

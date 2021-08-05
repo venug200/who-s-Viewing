@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-07-26
+ * @last modified on  : 2021-08-05
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
 **/
 public with sharing class AccountSyncQueueable implements Queueable , Database.AllowsCallouts {
@@ -37,14 +37,14 @@ public with sharing class AccountSyncQueueable implements Queueable , Database.A
 		Map<String, object> body = new Map<String, object>();
 		//create the body as a map with the event and the record to sync
 		body.put('event_name', (object) event);
-		List<Map<String, String>> records  = new List<Map<String, String>>();
+		List<AccountCreatedEventDTO> records  = new List<AccountCreatedEventDTO>();
 		
-		Map<String, String> record;
+		AccountCreatedEventDTO record;
 		for(Account a : this.accounts){
-			record = new Map<String,String>();
-			record.put('cognitoId', a.CognitoId__c);
-			record.put('customerId', a.CustomerId__c);
-			records.add(record);
+			record = new AccountCreatedEventDTO();
+			record.eventType = 'SF_CUST_CREATED';
+			record.userId = a.CognitoId__c;
+			record.CustomerId = a.CustomerId__c;
 		}
 		body.put('records', (object) records);
 		return body;

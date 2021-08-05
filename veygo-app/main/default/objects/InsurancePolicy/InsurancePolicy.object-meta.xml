@@ -143,6 +143,7 @@
         <lookupPhoneDialogsAdditionalFields>PremiumAmount</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Status</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>DriverPhoneNumber__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OwnerPhone__c</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>NameInsured</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ExpirationDate</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PremiumAmount</searchResultsAdditionalFields>

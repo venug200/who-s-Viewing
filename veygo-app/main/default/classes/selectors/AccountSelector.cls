@@ -14,24 +14,18 @@ public with sharing class AccountSelector {
 	 * @param customerId 
 	 * @return Account
 	 */
-	public Account getAccountByCustomerId(String customerId) {
+	public Account getAccountByCustomerId(String customerId){
 		Account account = null;
-		try{
-			if( Schema.Account.SObjectType.getDescribe().isAccessible() ){
-			
-				account = [SELECT Id
-						FROM Account
-						WHERE CustomerId__c = :customerId 
-					];
-			}else{
-				logger.error('getAccountByCustomerId(): User (userid: {0}) has no access right to Account', new List<Object> {String.valueOf(UserInfo.getUserId())});
+		if( Schema.Account.SObjectType.getDescribe().isAccessible() ){
+			for(Account a : [SELECT Id, PersonContactId 
+								FROM Account 
+								WHERE CustomerId__c = :customerId 
+							]){
+				account = a;
 			}
-		}catch(QueryException qe){
-			logger.warn('getAccountByCustomerId() : no Account with customerId = ' + customerId);
-		}catch(Exception e){
-			logger.error('getAccountByCustomerId() : Exception: ', e);
-		}
-		
+		}else{
+			logger.error('getAccountByCustomerId(): User (userid: {0}) has no access right to Account', new List<Object> {String.valueOf(UserInfo.getUserId())});
+		}		
 		return account;
 	}
 
@@ -41,24 +35,18 @@ public with sharing class AccountSelector {
 	* @param cognitoId 
 	* @return Account 
 	**/
-	public Account getAccountByCognitoId(String cognitoId) {
+	public Account getAccountByCognitoId(String cognitoId){
 		Account account = null;
-		try{
-			if( Schema.Account.SObjectType.getDescribe().isAccessible() ){
-			
-				account = [SELECT Id
-						FROM Account
-						WHERE CognitoId__c = :cognitoId 
-					];
-			}else{
-				logger.error('getAccountByCustomerId(): User (userid: {0}) has no access right to Account', new List<Object> {String.valueOf(UserInfo.getUserId())});
+		if( Schema.Account.SObjectType.getDescribe().isAccessible() ){
+			for(Account a : [SELECT Id, PersonContactId 
+								FROM Account 
+								WHERE CognitoId__c = :cognitoId 
+							]){
+				account = a;
 			}
-		}catch(QueryException qe){
-			logger.warn('getAccountByCustomerId() : no Account with cognitoId = ' + cognitoId);
-		}catch(Exception e){
-			logger.error('getAccountByCustomerId() : Exception: ', e);
-		}
-		
+		}else{
+			logger.error('getAccountByCognitoId(): User (userid: {0}) has no access right to Account', new List<Object> {String.valueOf(UserInfo.getUserId())});
+		}		
 		return account;
 	}
 }

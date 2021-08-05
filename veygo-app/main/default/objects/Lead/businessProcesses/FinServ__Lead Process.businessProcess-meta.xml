@@ -12,6 +12,10 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>Qualified</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Quote Start</fullName>
         <default>true</default>
     </values>
