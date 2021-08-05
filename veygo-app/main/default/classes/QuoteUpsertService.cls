@@ -9,15 +9,28 @@ public with sharing class QuoteUpsertService {
 
 	private rflib_Logger logger;
 	private AccountSelector accountSelector;
+	private LeadSelector leadSelector;
+	private OpportunitySelector opportunitySelector;
 
 	public QuoteUpsertService() {
 		this.logger = rflib_LoggerUtil.getFactory().createLogger('QuoteToBuyService');
 		this.accountSelector = new AccountSelector();
+		this.leadSelector = new leadSelector();
+		this.opportunitySelector = new OpportunitySelector();
 	}
 
 	public Account getCustomer(String cognitoId){
 		return (String.isBlank(cognitoId)) ? null : accountSelector.getAccountByCognitoId(cognitoId);
 	}
+
+	public Lead getLead(String quoteId){
+		return (String.isBlank(quoteId)) ? null : leadSelector.getLeadByQuoteNumber(quoteId);
+	}
+
+	public Opportunity getOpportunity(String quoteId){
+		return (String.isBlank(quoteId)) ? null : opportunitySelector.getOpportunityByQuoteNumber(quoteId);
+	}
+
 
 	/**
 	* @description create the lead from the quote start dto
@@ -61,38 +74,152 @@ public with sharing class QuoteUpsertService {
 		l.Status = dto.eventType;
 
 		return l;
+	}
+
+	public Opportunity createOpportunity(QuoteStartDTO dto, Account customer){
+		Opportunity o = new Opportunity();
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuoteUpsertMapper.quoteStartOpportunityMapping);
+	
+		o.StageName = dto.eventType;
+		o.Name = o.Quote_Number__c;
+		if(o.CloseDate == null){
+			o.CloseDate = Date.today();
+		}
+		return o;
 
 	}
 
+	public Opportunity createOpportunity(QuoteUpdateDTO dto, Account customer){
+		Opportunity o = new Opportunity();
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuoteUpsertMapper.quoteUpdateOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuoteUpsertMapper.quoteUpdateOwnerOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver.address)), QuoteUpsertMapper.quoteUpdateDriverAddressOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.car)), QuoteUpsertMapper.quoteUpdateCarOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.financials)), QuoteUpsertMapper.quoteUpdateFinancialsOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.underwriting)), QuoteUpsertMapper.quoteUpdateUnderwritingOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver)), QuoteUpsertMapper.quoteUpdateDriverOpportunityMapping);
+		o.StageName = dto.eventType;
+		o.Name = o.Quote_Number__c;
+		if(o.CloseDate == null){
+			o.CloseDate = Date.today();
+		}
+		return o;
+	}
+
+	public InsurancePolicy createPolicy(QuoteUpdateDTO dto, Account customer){
+		InsurancePolicy p = new InsurancePolicy();
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuoteUpsertMapper.quoteUpdatePolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuoteUpsertMapper.quoteUpdateOwnerPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver.address)), QuoteUpsertMapper.quoteUpdateDriverAddressPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.car)), QuoteUpsertMapper.quoteUpdateCarPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.financials)), QuoteUpsertMapper.quoteUpdateFinancialsPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.underwriting)), QuoteUpsertMapper.quoteUpdateUnderwritingPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver)), QuoteUpsertMapper.quoteUpdateDriverPolicyMapping);
+
+		p.NameInsuredId = customer.Id;
+		p.PolicyName = dto.quote.policyNumber;
+		p.Policy_Number_Id__c = dto.quote.policyNumber;
+
+		return p;
+	}
+
+	/**
+	* @description convert the lead to account and opportunity
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-04 
+	* @param profileId 
+	* @param contactId 
+	* @param accountId 
+	* @param opportunityId 
+	* @return boolean 
+	**/
+	public boolean convertLead(Lead l, Account customer, Id opportunityId){
+		l.OwnerId = UserInfo.getUserId();
+		Database.LeadConvert lc = new Database.LeadConvert();
+		lc.setLeadId(l.Id);
+		lc.setContactId(customer.PersonContactId);
+		lc.setAccountId(customer.Id);
+		lc.setOpportunityId(opportunityId);
+		lc.setDoNotCreateOpportunity(false);
+		lc.setConvertedStatus(Constants.CONVERTED_LEADSTATUS);
+
+		Database.LeadConvertResult lcr = Database.convertLead(lc);
+		if(lcr.isSuccess()){
+			return true;
+		}else{
+			logger.error('error during the convertion of the lead: ' + JSON.serializePretty(lcr.getErrors()));
+			return false;
+		}
+	}
+
+	/**
+	* @description 
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-02
+	* @param l 
+	* @param quoteInfoMap 
+	* @param mapper 
+	**/
 	private void setLeadFields(Lead l, Map<String, Object> quoteInfoMap, Map<String, String> mapper ){
-		
-		String leadField;
-		String leadTypeField;
+		String field;
+		for(String dtoKey : quoteInfoMap.keySet()){
+			field = mapper.get(dtoKey);
+			if(field == null){ continue; }
+
+			Object value = getLeadFieldValue(dtoKey, field, quoteInfoMap);
+			l.put(field, value);			
+		}
+	}
+
+	/**
+	* @description 
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-03
+	* @param l 
+	* @param quoteInfoMap 
+	* @param mapper 
+	**/
+	private void setOpportunityFields(Opportunity o, Map<String, Object> quoteInfoMap, Map<String, String> mapper ){
+		String field;
 		Schema.DisplayType type;
 		for(String dtoKey : quoteInfoMap.keySet()){
-			leadField = mapper.get(dtoKey);
-			if(leadField == null){ continue; }
+			field = mapper.get(dtoKey);
+			if(field == null){ continue; }
 
-			Object value = getValue(dtoKey, leadField, quoteInfoMap);
-			l.put(leadField, value);			
+			Object value = getOpportunityFieldValue(dtoKey, field, quoteInfoMap);
+			o.put(field, value);			
 		}
-
 	}
 
+	/**
+	* @description 
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-05 
+	* @param p 
+	* @param quoteInfoMap 
+	* @param mapper 
+	**/
+	private void setPolicyFields(InsurancePolicy p, Map<String, Object> quoteInfoMap, Map<String, String> mapper ){
+		String field;
+		Schema.DisplayType type;
+		for(String dtoKey : quoteInfoMap.keySet()){
+			field = mapper.get(dtoKey);
+			if(field == null){ continue; }
+
+			Object value = getPolicyFieldValue(dtoKey, field, quoteInfoMap);
+			p.put(field, value);			
+		}
+	}
 
 	/**
 	* @description return the value from the dto
 	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-02 
 	* @param dtoKey 
-	* @param leadField 
+	* @param leadField the lead field name
 	* @param quoteInfo 
 	* @return Object 
 	**/
-	private Object getValue(String dtoKey, String leadField, Map<String, Object> quoteInfo){
-		if(getLeadFieldType(leadField) == Schema.DisplayType.DATE){
+	private Object getLeadFieldValue(String dtoKey, String field, Map<String, Object> quoteInfo){
+		if(getLeadFieldType(field) == Schema.DisplayType.DATE){
 			return Date.valueOf((String)quoteInfo.get(dtoKey));
 		}
-		if(getLeadFieldType(leadField) == Schema.DisplayType.DATETIME){
+		if(getLeadFieldType(field) == Schema.DisplayType.DATETIME){
 			return Datetime.valueOf(((String)quoteInfo.get(dtoKey)).replace('T',' '));
 		}
 		if(dtoKey == 'failureReasons'){
@@ -102,14 +229,76 @@ public with sharing class QuoteUpsertService {
 	}
 
 	/**
-	* @description return the field type of the given field
+	* @description return the value from the dto
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-03
+	* @param dtoKey 
+	* @param field the opportunity field name 
+	* @param quoteInfo 
+	* @return Object 
+	**/
+	private Object getOpportunityFieldValue(String dtoKey, String field, Map<String, Object> quoteInfo){
+		System.debug(dtoKey  + '   ' + field);
+		if(getOpportunityFieldType(field) == Schema.DisplayType.DATE){
+			return Date.valueOf((String)quoteInfo.get(dtoKey));
+		}
+		if(getOpportunityFieldType(field) == Schema.DisplayType.DATETIME){
+			return Datetime.valueOf(((String)quoteInfo.get(dtoKey)).replace('T',' '));
+		}
+		if(dtoKey == 'failureReasons'){
+			return String.valueOf(quoteInfo.get(dtoKey));
+		}
+		return quoteInfo.get(dtoKey);	
+	}
+
+	/**
+	* @description return the value from the dto
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-05 
+	* @param dtoKey 
+	* @param field the policy field name
+	* @param quoteInfo 
+	* @return Object 
+	**/
+	private Object getPolicyFieldValue(String dtoKey, String field, Map<String, Object> quoteInfo){
+		if(getPolicyFieldType(field) == Schema.DisplayType.DATE){
+			return Date.valueOf((String)quoteInfo.get(dtoKey));
+		}
+		if(getPolicyFieldType(field) == Schema.DisplayType.DATETIME){
+			return Datetime.valueOf(((String)quoteInfo.get(dtoKey)).replace('T',' '));
+		}
+		if(dtoKey == 'failureReasons'){
+			return String.valueOf(quoteInfo.get(dtoKey));
+		}
+		return quoteInfo.get(dtoKey);	
+	}
+
+	/**
+	* @description return the field type of the given lead field
 	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-02 
 	* @param fieldName 
 	* @return Schema.DisplayType 
 	**/
 	private Schema.DisplayType getLeadFieldType(String fieldName){
-		System.debug('....' + fieldName);
 		return Schema.SObjectType.Lead.fields.getMap().get(fieldName).getDescribe().getType();
+	}
+
+	/**
+	* @description return the field type of the given opportunity field
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-03 
+	* @param fieldName 
+	* @return Schema.DisplayType 
+	**/
+	private Schema.DisplayType getOpportunityFieldType(String fieldName){
+		return Schema.SObjectType.Opportunity.fields.getMap().get(fieldName).getDescribe().getType();
+	}
+
+	/**
+	* @description return the field type of the given Policy field
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-05 
+	* @param fieldName 
+	* @return Schema.DisplayType 
+	**/
+	private Schema.DisplayType getPolicyFieldType(String fieldName){
+		return Schema.SObjectType.InsurancePolicy.fields.getMap().get(fieldName).getDescribe().getType();
 	}
 
 }
