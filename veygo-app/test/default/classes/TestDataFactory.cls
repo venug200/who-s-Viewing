@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-08-04
+ * @last modified on  : 2021-08-06
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
 **/
 @IsTest
@@ -60,6 +60,17 @@ public class TestDataFactory {
 			StageName = Constants.QUOTE_STARTED
 		);
 		return new TestDataFactory((SObject) oppty);
+	}
+
+	public static TestDataFactory createPolicy(String policyNumber, Id accountId){
+		InsurancePolicy p = new InsurancePolicy(
+			NameInsuredId = accountId,
+			Name = policyNumber,
+			PolicyName = policyNumber,
+			Policy_Number_Id__c = policyNumber
+
+		);
+		return new TestDataFactory((SObject) p);
 	}
 	
 }
