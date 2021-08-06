@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
+        <apexClass>AccountCreatedEventDTO</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccountSelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -21,19 +25,51 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>QuoteUpsertDTO</apexClass>
+        <apexClass>Constants</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>QuoteUpsertHelper</apexClass>
+        <apexClass>LeadSelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>QuoteUpsertRestResource</apexClass>
+        <apexClass>OpportunitySelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>QuoteUpsertService</apexClass>
+        <apexClass>PolicyCanceledDTO</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PolicyUpsertService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QuotePolicyUpsertHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QuotePolicyUpsertHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QuotePolicyUpsertMapper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QuotePolicyUpsertRestResource</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QuotePolicyUpsertService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QuoteStartDTO</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QuoteUpdateDTO</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <fieldPermissions>
@@ -1243,6 +1279,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.Car_Engine_Size__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Car_Insurance_Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Car_Trasmission__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.CashSurrenderValue</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1443,6 +1494,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.Excess__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1478,7 +1534,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.HasConvictions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.InceptionDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Insurance_Initial_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Insurance_Price_Before_Tax__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Insurance_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1513,6 +1589,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.License_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.Manufacturer__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1538,6 +1619,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.NumberOfClaims__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>InsurancePolicy.OpportunityName__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.OriginalEffectiveDate</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1558,6 +1654,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.OwnerDateOfBirth__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.OwnerEmail__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1573,7 +1674,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.OwnerOccupationType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.OwnerOccupation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.OwnerPhone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.OwnerPostcode__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Owner_Relationship__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1648,6 +1769,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.Policy_Number_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.PremiumAmount</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1703,12 +1829,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.Product_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.Purchased__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>InsurancePolicy.QuoteEnd__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Quote_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1808,6 +1944,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>InsurancePolicy.Start_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.Status</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1858,12 +1999,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>InsurancePolicy.Underwriting_Status_Reason__c</field>
+        <field>InsurancePolicy.UnderwritingFailureReasons__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>InsurancePolicy.Underwriting_Status__c</field>
+        <field>InsurancePolicy.Underwriting_Passed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1889,6 +2030,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>InsurancePolicy.Year__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InsurancePolicy.Years_NCB__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2718,6 +2864,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Car_Engine_Size__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Car_Insurance_Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Car_Trasmission__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.CassieDriverAllowed__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2933,6 +3094,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.HasConvictions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.IP_Address__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2943,12 +3109,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Insurance_Initial_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Insurance_Permium_Tax_Percentage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Insurance_Permium_Tax__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Insurance_Policy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Insurance_Price_Before_Tax__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Insurance_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3013,6 +3199,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Net_Premium__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3023,7 +3214,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.NumberOfClaims__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.Override__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.OwnerDateOfBirth__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3043,12 +3244,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Opportunity.OwnerOccupationType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.OwnerOccupation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.OwnerPhone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Opportunity.OwnerPostcode__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Owner_Driver__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Owner_Relationship__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3084,6 +3305,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Policy_Expiration_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Policy_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3188,12 +3414,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.Underwriting_Status_Reason__c</field>
+        <field>Opportunity.UnderwritingFailureReasons__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.Underwriting_Status__c</field>
+        <field>Opportunity.Underwriting_Passed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3214,6 +3440,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Year__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Years_NCB__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

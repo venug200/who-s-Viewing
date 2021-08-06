@@ -2,13 +2,13 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-08-05
+ * @last modified on  : 2021-08-06
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
  * Modifications Log 
  * Ver   Date         Author                              Modification
  * 1.0   2021-07-19   matteo.iacucci@emea.merkleinc.com   Initial Version
 **/
-public with sharing class QuoteUpsertMapper {
+public with sharing class QuotePolicyUpsertMapper {
 	public static Map<String, String> leadMap = new Map<String, String>{
 		'quoteId' => 'Quote_Number__c',
 		'eventType' => 'Status',

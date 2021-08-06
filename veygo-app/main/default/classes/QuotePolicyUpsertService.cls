@@ -5,15 +5,15 @@
  * @version 1.0
  * @since   2021-07-14
 */
-public with sharing class QuoteUpsertService {
+public with sharing class QuotePolicyUpsertService {
 
 	private rflib_Logger logger;
 	private AccountSelector accountSelector;
 	private LeadSelector leadSelector;
 	private OpportunitySelector opportunitySelector;
 
-	public QuoteUpsertService() {
-		this.logger = rflib_LoggerUtil.getFactory().createLogger('QuoteToBuyService');
+	public QuotePolicyUpsertService() {
+		this.logger = rflib_LoggerUtil.getFactory().createLogger('QuotePolicyUpsertService');
 		this.accountSelector = new AccountSelector();
 		this.leadSelector = new leadSelector();
 		this.opportunitySelector = new OpportunitySelector();
@@ -41,7 +41,7 @@ public with sharing class QuoteUpsertService {
 	public Lead createLead(QuoteStartDTO dto){
 		Lead l = new Lead();
 		
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuoteUpsertMapper.quoteUpdateLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteUpdateLeadMapping);
 		
 		if(String.isBlank(l.LastName)){
 			l.LastName = l.Quote_Number__c;
@@ -59,13 +59,13 @@ public with sharing class QuoteUpsertService {
 	public Lead createLead(QuoteUpdateDTO dto){
 		Lead l = new Lead();
 		
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuoteUpsertMapper.quoteUpdateLeadMapping);
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuoteUpsertMapper.quoteUpdateOwnerLeadMapping);
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver.address)), QuoteUpsertMapper.quoteUpdateDriverAddressLeadMapping);
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.car)), QuoteUpsertMapper.quoteUpdateCarLeadMapping);
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.financials)), QuoteUpsertMapper.quoteUpdateFinancialsLeadMapping);
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.underwriting)), QuoteUpsertMapper.quoteUpdateUnderwritingLeadMapping);
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver)), QuoteUpsertMapper.quoteUpdateDriverLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteUpdateLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuotePolicyUpsertMapper.quoteUpdateOwnerLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver.address)), QuotePolicyUpsertMapper.quoteUpdateDriverAddressLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.car)), QuotePolicyUpsertMapper.quoteUpdateCarLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.financials)), QuotePolicyUpsertMapper.quoteUpdateFinancialsLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.underwriting)), QuotePolicyUpsertMapper.quoteUpdateUnderwritingLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver)), QuotePolicyUpsertMapper.quoteUpdateDriverLeadMapping);
 
 		if(String.isBlank(l.LastName)){
 			l.LastName = l.Quote_Number__c;
@@ -78,7 +78,7 @@ public with sharing class QuoteUpsertService {
 
 	public Opportunity createOpportunity(QuoteStartDTO dto, Account customer){
 		Opportunity o = new Opportunity();
-		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuoteUpsertMapper.quoteStartOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteStartOpportunityMapping);
 	
 		o.StageName = dto.eventType;
 		o.Name = o.Quote_Number__c;
@@ -91,13 +91,13 @@ public with sharing class QuoteUpsertService {
 
 	public Opportunity createOpportunity(QuoteUpdateDTO dto, Account customer){
 		Opportunity o = new Opportunity();
-		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuoteUpsertMapper.quoteUpdateOpportunityMapping);
-		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuoteUpsertMapper.quoteUpdateOwnerOpportunityMapping);
-		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver.address)), QuoteUpsertMapper.quoteUpdateDriverAddressOpportunityMapping);
-		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.car)), QuoteUpsertMapper.quoteUpdateCarOpportunityMapping);
-		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.financials)), QuoteUpsertMapper.quoteUpdateFinancialsOpportunityMapping);
-		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.underwriting)), QuoteUpsertMapper.quoteUpdateUnderwritingOpportunityMapping);
-		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver)), QuoteUpsertMapper.quoteUpdateDriverOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteUpdateOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuotePolicyUpsertMapper.quoteUpdateOwnerOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver.address)), QuotePolicyUpsertMapper.quoteUpdateDriverAddressOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.car)), QuotePolicyUpsertMapper.quoteUpdateCarOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.financials)), QuotePolicyUpsertMapper.quoteUpdateFinancialsOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.underwriting)), QuotePolicyUpsertMapper.quoteUpdateUnderwritingOpportunityMapping);
+		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver)), QuotePolicyUpsertMapper.quoteUpdateDriverOpportunityMapping);
 		o.StageName = dto.eventType;
 		o.Name = o.Quote_Number__c;
 		if(o.CloseDate == null){
@@ -108,18 +108,26 @@ public with sharing class QuoteUpsertService {
 
 	public InsurancePolicy createPolicy(QuoteUpdateDTO dto, Account customer){
 		InsurancePolicy p = new InsurancePolicy();
-		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuoteUpsertMapper.quoteUpdatePolicyMapping);
-		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuoteUpsertMapper.quoteUpdateOwnerPolicyMapping);
-		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver.address)), QuoteUpsertMapper.quoteUpdateDriverAddressPolicyMapping);
-		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.car)), QuoteUpsertMapper.quoteUpdateCarPolicyMapping);
-		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.financials)), QuoteUpsertMapper.quoteUpdateFinancialsPolicyMapping);
-		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.underwriting)), QuoteUpsertMapper.quoteUpdateUnderwritingPolicyMapping);
-		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver)), QuoteUpsertMapper.quoteUpdateDriverPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteUpdatePolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuotePolicyUpsertMapper.quoteUpdateOwnerPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver.address)), QuotePolicyUpsertMapper.quoteUpdateDriverAddressPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.car)), QuotePolicyUpsertMapper.quoteUpdateCarPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.financials)), QuotePolicyUpsertMapper.quoteUpdateFinancialsPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.underwriting)), QuotePolicyUpsertMapper.quoteUpdateUnderwritingPolicyMapping);
+		setPolicyFields(p, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.driver)), QuotePolicyUpsertMapper.quoteUpdateDriverPolicyMapping);
 
 		p.NameInsuredId = customer.Id;
 		p.PolicyName = dto.quote.policyNumber;
 		p.Policy_Number_Id__c = dto.quote.policyNumber;
 
+		return p;
+	}
+
+	public InsurancePolicy cancelPolicy(PolicyCanceledDTO dto, Account customer){
+		InsurancePolicy p = new InsurancePolicy();
+		p.Policy_Number_Id__c = dto.policyId;
+		p.NameInsuredId = customer.Id;
+		p.Status = 'Cancelled';
 		return p;
 	}
 
