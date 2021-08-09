@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-07-30
+ * @last modified on  : 2021-08-09
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
 **/
 public class QuoteUpdateDTO {
@@ -14,8 +14,8 @@ public class QuoteUpdateDTO {
 	public class Quote {
 		public String product; //LDP, OTC, DTC
 		public String quoteId;
-		public String startDate;
-		public String endDate;
+		public DateTime startDate;
+		public DateTime endDate;
 		public String policyNumber;
 		public Boolean purchased;
 		public Financials financials;
@@ -31,7 +31,7 @@ public class QuoteUpdateDTO {
 		public String lastName;
 		public String email;
 		public String phoneNumber;
-		public String dateOfBirth;
+		public Date dateOfBirth;
 		public String occupationType;
 		public String occupation;
 		public String postcode;
@@ -83,7 +83,7 @@ public class QuoteUpdateDTO {
 		public String lastName;
 		public String email;
 		public String phoneNumber;
-		public String dateOfBirth;
+		public Date dateOfBirth;
 		public String occupationType;
 		public String occupation;
 		public Address address;
