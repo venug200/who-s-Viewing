@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-07-29
+ * @last modified on  : 2021-08-09
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
 **/
 public class QuoteStartDTO {
@@ -16,7 +16,7 @@ public class QuoteStartDTO {
 		public String quoteId;
 		public String licenceType; //UKM, UKA, UKP, NUK
 		public String postcode;
-		public String dateOfBirth;
+		public Date dateOfBirth;
 	}
 
 	public static QuoteStartDTO parse(String json) {

@@ -245,7 +245,6 @@ public with sharing class QuotePolicyUpsertService {
 	* @return Object 
 	**/
 	private Object getOpportunityFieldValue(String dtoKey, String field, Map<String, Object> quoteInfo){
-		System.debug(dtoKey  + '   ' + field);
 		if(getOpportunityFieldType(field) == Schema.DisplayType.DATE){
 			return Date.valueOf((String)quoteInfo.get(dtoKey));
 		}
