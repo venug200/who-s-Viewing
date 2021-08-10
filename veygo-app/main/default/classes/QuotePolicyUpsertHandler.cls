@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-08-06
+ * @last modified on  : 2021-08-10
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
 **/
 public with sharing class QuotePolicyUpsertHandler {
@@ -151,6 +151,7 @@ public with sharing class QuotePolicyUpsertHandler {
 		}
 		//update Opportunity with the policy Id
 		o.Insurance_Policy__c = policy.Id;
+		o.StageName = Constants.OPPORTUNITY_CLOSED;
 		upResult = Database.upsert(o, Opportunity.Quote_Number__c, false);
 		if(!upResult.isSuccess()){
 			return JSON.serialize(upResult.getErrors());
