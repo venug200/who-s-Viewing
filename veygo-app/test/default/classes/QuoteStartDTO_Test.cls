@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-07-29
+ * @last modified on  : 2021-08-10
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
 **/
 @IsTest
@@ -17,7 +17,7 @@ public class QuoteStartDTO_Test {
 		'    \"quoteId\": \"string\",'+
 		'    \"licenceType\": \"UKM\",'+
 		'    \"postcode\": \"string\",'+
-		'    \"dateOfBirth\": \"string\"'+
+		'    \"dateOfBirth\": \"1990-03-01\"'+
 		'  }'+
 		'}';
 		QuoteStartDTO obj = QuoteStartDTO.parse(json);
