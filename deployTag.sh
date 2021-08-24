@@ -28,6 +28,13 @@ do
 	echo -e "\e[35mLast deployment tag name (\e[0m\e[100m$LAST_TAG\e[0m\e[35m): (y or type the tag)\e[0m"
 	read TAG
 done
+echo ""
+while [ ! -n "$OPEN_ORG"  ] 
+do
+	echo -e "\e[35mOpen Deployment Status page? Y/N\e[0m"
+	read OPEN_ORG
+done
+echo ""
 
 if [[ $TAG == "y" || $TAG == "Y" ]]; then
     TAG=$LAST_TAG
@@ -70,6 +77,10 @@ fi
 echo -e "\e[1m\e[32m"
 echo $COMMAND
 echo -e "\e[0m"
+if [[ $OPEN_ORG == "y" || $OPEN_ORG == "Y" ]]; then
+    sfdx force:org:open -u $ORG_NAME -p lightning/setup/DeployStatus/home
+fi
+
 bash -c $COMMAND
 
 
