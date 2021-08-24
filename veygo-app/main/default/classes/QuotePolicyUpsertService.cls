@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-08-10
+ * @last modified on  : 2021-08-24
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
 **/
 public with sharing class QuotePolicyUpsertService {
@@ -187,13 +187,13 @@ public with sharing class QuotePolicyUpsertService {
 	private void setOpportunityStatus(Opportunity o){
 		//defaul status;
 		String status = Constants.OPPORTUNITY_QUOTESTART; 
-		if(l.Insurance_Initial_Price__c != null){
+		if(o.Insurance_Initial_Price__c != null){
 			status = Constants.OPPORTUNITY_INDICATIVEQUOTE;
 		}
-		if(l.Insurance_Price__c != null){
+		if(o.Insurance_Price__c != null){
 			status = Constants.OPPORTUNITY_FULLQUOTE;
 		}
-		l.Status = status;
+		o.StageName = status;
 	}
 
 
