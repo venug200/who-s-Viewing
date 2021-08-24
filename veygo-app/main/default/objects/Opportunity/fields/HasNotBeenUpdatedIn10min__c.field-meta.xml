@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HasNotBeenUpdatedIn10min__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( DATETIMEVALUE(now())  -  DATETIMEVALUE(LastModifiedDate) &gt; 0, 
+
+	IF( FLOOR( DATETIMEVALUE(now())- DATETIMEVALUE(LastModifiedDate) ) &gt; 0, TRUE,
+	
+		IF( FLOOR( MOD( (DATETIMEVALUE(now()) - DATETIMEVALUE(LastModifiedDate) ) * 24, 24 ) ) &gt; 0, TRUE,
+		
+				IF( ROUND( MOD( (DATETIMEVALUE(now()) - DATETIMEVALUE(LastModifiedDate) ) * 24 * 60, 60 ), 0 ) &gt; 10, TRUE, FALSE)
+				
+		)
+	), FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HasNotBeenUpdatedIn10min</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,10 +1,10 @@
 /**
- * QuoteUpsertService 
- *
- * @author  Matteo Iacucci
- * @version 1.0
- * @since   2021-07-14
-*/
+ * @description       : 
+ * @author            : matteo.iacucci@emea.merkleinc.com
+ * @group             : 
+ * @last modified on  : 2021-08-10
+ * @last modified by  : matteo.iacucci@emea.merkleinc.com
+**/
 public with sharing class QuotePolicyUpsertService {
 
 	private rflib_Logger logger;
@@ -46,7 +46,7 @@ public with sharing class QuotePolicyUpsertService {
 		if(String.isBlank(l.LastName)){
 			l.LastName = l.Quote_Number__c;
 		}
-		l.Status = dto.eventType;
+		l.Status = Constants.LEAD_QUOTESTART;
 		return l;
 	}
 
@@ -71,7 +71,7 @@ public with sharing class QuotePolicyUpsertService {
 			l.LastName = l.Quote_Number__c;
 		}
 		
-		l.Status = dto.eventType;
+		setLeadStatus(l);
 
 		return l;
 	}
@@ -80,7 +80,7 @@ public with sharing class QuotePolicyUpsertService {
 		Opportunity o = new Opportunity();
 		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteStartOpportunityMapping);
 	
-		o.StageName = dto.eventType;
+		o.StageName = Constants.OPPORTUNITY_QUOTESTART;
 		o.Name = o.Quote_Number__c;
 		if(o.CloseDate == null){
 			o.CloseDate = Date.today();
@@ -103,6 +103,7 @@ public with sharing class QuotePolicyUpsertService {
 		if(o.CloseDate == null){
 			o.CloseDate = Date.today();
 		}
+		setOpportunityStatus(o);
 		return o;
 	}
 
@@ -158,6 +159,44 @@ public with sharing class QuotePolicyUpsertService {
 			return false;
 		}
 	}
+
+	/**
+	* @description set the lead status according to the info sent to the lead.
+	* the default status is Quote start then if the ininital price is sent the status is indicative quote, if the price is sent the status is full quote
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-10 
+	* @param l 
+	**/
+	private void setLeadStatus(Lead l){
+		//defaul status;
+		String status = Constants.LEAD_QUOTESTART; 
+		if(l.Insurance_Initial_Price__c != null){
+			status = Constants.LEAD_INDICATIVEQUOTE;
+		}
+		if(l.Insurance_Price__c != null){
+			status = Constants.LEAD_FULLQUOTE;
+		}
+		l.Status = status;
+	}
+
+	/**
+	* @description set the opportunity status according to the info sent to the opportuny.
+	* the default stagename is Quote start then if the ininital price is sent the status is indicative quote, if the price is sent the stage name is full quote
+	* @author matteo.iacucci@emea.merkleinc.com | 2021-08-10 
+	* @param l 
+	**/
+	private void setOpportunityStatus(Opportunity o){
+		//defaul status;
+		String status = Constants.OPPORTUNITY_QUOTESTART; 
+		if(l.Insurance_Initial_Price__c != null){
+			status = Constants.OPPORTUNITY_INDICATIVEQUOTE;
+		}
+		if(l.Insurance_Price__c != null){
+			status = Constants.OPPORTUNITY_FULLQUOTE;
+		}
+		l.Status = status;
+	}
+
+
 
 	/**
 	* @description 
