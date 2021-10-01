@@ -295,7 +295,7 @@
                 <field>DriverDateOfBirth__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>DriverAge__c</field>
             </layoutItems>
             <layoutItems>
