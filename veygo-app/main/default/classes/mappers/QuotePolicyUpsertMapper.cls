@@ -42,7 +42,7 @@ public with sharing class QuotePolicyUpsertMapper {
 		'startDate' => 'Quote_Date__c',
 		'endDate' => 'QuoteEnd__c',
 		'policyNumber' => 'Policy_Number__c',
-		'documentDeliveryPreference' => 'DocumentDeliveryPreferrence__c',
+		'documentDeliveryPreference' => 'DocumentDeliveryPreference__c',
 		'purchased' => 'Purchased__c'
 		
 	};

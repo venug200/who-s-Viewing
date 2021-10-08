@@ -10,7 +10,7 @@
         <criteriaItems>
             <field>RecordTypeId</field>
             <operation>equals</operation>
-            <value>Complaint,Question,Problem,Task,Incident,Claim</value>
+            <value>Complaint,Claim</value>
         </criteriaItems>
     </sharingCriteriaRules>
 </SharingRules>

@@ -1302,7 +1302,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Contact.CassiseLicenceValidFrom__c</field>
+        <field>Contact.CassieLicenceValidFrom__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

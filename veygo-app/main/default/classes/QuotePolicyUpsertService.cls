@@ -41,7 +41,7 @@ public with sharing class QuotePolicyUpsertService {
 	public Lead createLead(QuoteStartDTO dto){
 		Lead l = new Lead();
 		
-		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteUpdateLeadMapping);
+		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteStartLeadMapping);
 		
 		if(String.isBlank(l.LastName)){
 			l.LastName = l.Quote_Number__c;
@@ -56,7 +56,7 @@ public with sharing class QuotePolicyUpsertService {
 	* @param dto 
 	* @return Lead 
 	**/
-	public Lead createLead(QuoteUpdateDTO dto){
+	public Lead updateLead(QuoteUpdateDTO dto){
 		Lead l = new Lead();
 		
 		setLeadFields(l, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteUpdateLeadMapping);
@@ -89,7 +89,7 @@ public with sharing class QuotePolicyUpsertService {
 
 	}
 
-	public Opportunity createOpportunity(QuoteUpdateDTO dto, Account customer){
+	public Opportunity updateOpportunity(QuoteUpdateDTO dto, Account customer){
 		Opportunity o = new Opportunity();
 		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote)), QuotePolicyUpsertMapper.quoteUpdateOpportunityMapping);
 		setOpportunityFields(o, (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(dto.quote.owner)), QuotePolicyUpsertMapper.quoteUpdateOwnerOpportunityMapping);

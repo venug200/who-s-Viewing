@@ -64,7 +64,7 @@ public with sharing class QuotePolicyUpsertHandler {
 			this.response.statusCode = 200;
 			responseBody.put('eventType', Constants.QUOTE_STARTED);
 			responseBody.put('quoteId', o.Quote_Number__c);
-			responseBody.put('opportunityId', o.Id);+
+			responseBody.put('opportunityId', o.Id);
 			this.response.responseBody = Blob.valueOf(JSON.serializePretty(responseBody));
 		}else{
 			return JSON.serialize(upResult.getErrors());
@@ -84,7 +84,7 @@ public with sharing class QuotePolicyUpsertHandler {
 		
 		Map<String, String> responseBody = new Map<String, String>();
 	
-		Lead l = service.createLead(dto);
+		Lead l = service.updateLead(dto);
 		Database.UpsertResult upResult = Database.upsert(l, Lead.Quote_Number__c, false);
 		if(upResult.isSuccess()){
 			this.response.statusCode = 200;
@@ -112,7 +112,7 @@ public with sharing class QuotePolicyUpsertHandler {
 	public String handleQuoteUpdateForCustomer(QuoteUpdateDTO dto, Account customer){
 		//if user id is sent and the customer is in salesforce check if was created the lead at the beginning
 		Lead l = service.getLead(dto.quote.quoteId);
-		Opportunity o = service.createOpportunity(dto, customer);
+		Opportunity o = service.updateOpportunity(dto, customer);
 		Database.UpsertResult upResult = Database.upsert(o, Opportunity.Quote_Number__c, false);
 		if(upResult.isSuccess()){
 			if(l != null && ! service.convertLead(l, customer, o.Id)){
