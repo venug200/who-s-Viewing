@@ -1210,7 +1210,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Contact.CassiseLicenceValidFrom__c</field>
+        <field>Contact.CassieLicenceValidFrom__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1790,7 +1790,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>InsurancePolicy.Car_Trasmission__c</field>
+        <field>InsurancePolicy.CarTransmission__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1865,7 +1865,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>InsurancePolicy.DocumentDeliveryPreferrence__c</field>
+        <field>InsurancePolicy.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2625,7 +2625,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.Car_Trasmission__c</field>
+        <field>Lead.CarTransmission__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2690,7 +2690,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.DocumentDeliveryPreferrence__c</field>
+        <field>Lead.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3375,7 +3375,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.Car_Trasmission__c</field>
+        <field>Opportunity.CarTransmission__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3440,7 +3440,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.DocumentDeliveryPreferrence__c</field>
+        <field>Opportunity.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4031,23 +4031,7 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <recordType>Case.Incident</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <recordType>Case.Problem</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <recordType>Case.Question</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
         <recordType>Case.Service_Case</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <recordType>Case.Task</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

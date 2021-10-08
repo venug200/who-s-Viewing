@@ -1285,7 +1285,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>InsurancePolicy.Car_Trasmission__c</field>
+        <field>InsurancePolicy.CarTransmission__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1360,7 +1360,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>InsurancePolicy.DocumentDeliveryPreferrence__c</field>
+        <field>InsurancePolicy.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2120,7 +2120,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.Car_Trasmission__c</field>
+        <field>Lead.CarTransmission__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2185,7 +2185,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.DocumentDeliveryPreferrence__c</field>
+        <field>Lead.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2870,7 +2870,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.Car_Trasmission__c</field>
+        <field>Opportunity.CarTransmission__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2935,7 +2935,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.DocumentDeliveryPreferrence__c</field>
+        <field>Opportunity.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -42,7 +42,7 @@ public with sharing class QuotePolicyUpsertMapper {
 		'startDate' => 'Quote_Date__c',
 		'endDate' => 'QuoteEnd__c',
 		'policyNumber' => 'Policy_Number__c',
-		'documentDeliveryPreference' => 'DocumentDeliveryPreferrence__c',
+		'documentDeliveryPreference' => 'DocumentDeliveryPreference__c',
 		'purchased' => 'Purchased__c'
 		
 	};
@@ -77,7 +77,7 @@ public with sharing class QuotePolicyUpsertMapper {
 		
 		'make' => 'CarMake__c',
 		'model' => 'CarModel__c',
-		'transmission' => 'Car_Trasmission__c',
+		'transmission' => 'CarTransmission__c',
 		'year' => 'Year__c',
 		'value' => 'CarValue__c',
 		'engineSize' => 'Car_Engine_Size__c',
@@ -126,7 +126,7 @@ public with sharing class QuotePolicyUpsertMapper {
 		'startDate' => 'Actual_Quote_Creation_Date__c',
 		'endDate' => 'QuoteEnd__c',
 		'policyNumber' => 'Policy_Number__c',
-		'documentDeliveryPreference' => 'DocumentDeliveryPreferrence__c',
+		'documentDeliveryPreference' => 'DocumentDeliveryPreference__c',
 		'purchased' => 'Purchased__c'
 		
 	};
@@ -161,7 +161,7 @@ public with sharing class QuotePolicyUpsertMapper {
 		
 		'make' => 'CarMake__c',
 		'model' => 'CarModel__c',
-		'transmission' => 'Car_Trasmission__c',
+		'transmission' => 'CarTransmission__c',
 		'year' => 'Year__c',
 		'value' => 'CarValue__c',
 		'engineSize' => 'Car_Engine_Size__c',
@@ -210,7 +210,7 @@ public with sharing class QuotePolicyUpsertMapper {
 		'startDate' => 'Start_Date__c',
 		'endDate' => 'End_Date__c',
 		'policyNumber' => 'Name',
-		'documentDeliveryPreference' => 'DocumentDeliveryPreferrence__c',
+		'documentDeliveryPreference' => 'DocumentDeliveryPreference__c',
 		'purchased' => 'Purchased__c'
 		
 	};
@@ -245,7 +245,7 @@ public with sharing class QuotePolicyUpsertMapper {
 		
 		'make' => 'CarMake__c',
 		'model' => 'CarModel__c',
-		'transmission' => 'Car_Trasmission__c',
+		'transmission' => 'CarTransmission__c',
 		'year' => 'Year__c',
 		'value' => 'CarValue__c',
 		'engineSize' => 'Car_Engine_Size__c',

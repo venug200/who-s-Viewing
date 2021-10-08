@@ -45,7 +45,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Car_Trasmission__c</field>
+                <field>CarTransmission__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -440,11 +440,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Manufacturer__c</field>
+                <field>CarMake__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Model__c</field>
+                <field>CarModel__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -492,7 +492,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>DocumentDeliveryPreferrence__c</field>
+                <field>DocumentDeliveryPreference__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
