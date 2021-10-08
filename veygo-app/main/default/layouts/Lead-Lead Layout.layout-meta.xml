@@ -33,7 +33,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Car_Trasmission__c</field>
+                <field>CarTransmission__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

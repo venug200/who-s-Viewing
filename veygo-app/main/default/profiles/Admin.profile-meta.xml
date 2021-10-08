@@ -1887,7 +1887,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>InsurancePolicy.Car_Trasmission__c</field>
+        <field>InsurancePolicy.CarTransmission__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1962,7 +1962,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>InsurancePolicy.DocumentDeliveryPreferrence__c</field>
+        <field>InsurancePolicy.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2747,7 +2747,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Lead.Car_Trasmission__c</field>
+        <field>Lead.CarTransmission__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2812,7 +2812,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Lead.DocumentDeliveryPreferrence__c</field>
+        <field>Lead.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3507,7 +3507,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Opportunity.Car_Trasmission__c</field>
+        <field>Opportunity.CarTransmission__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3572,7 +3572,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.DocumentDeliveryPreferrence__c</field>
+        <field>Opportunity.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4180,24 +4180,8 @@
         <recordType>Case.Fraud</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Case-Incident Layout</layout>
-        <recordType>Case.Incident</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Case-Problem Layout</layout>
-        <recordType>Case.Problem</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Case-Question Layout</layout>
-        <recordType>Case.Question</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Case-Service Layout</layout>
         <recordType>Case.Service_Case</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Case-Task Layout</layout>
-        <recordType>Case.Task</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CaseClose-Close Case Layout</layout>
@@ -4212,23 +4196,7 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>CaseClose-Close Case Layout</layout>
-        <recordType>Case.Incident</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>CaseClose-Close Case Layout</layout>
-        <recordType>Case.Problem</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>CaseClose-Close Case Layout</layout>
-        <recordType>Case.Question</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>CaseClose-Close Case Layout</layout>
         <recordType>Case.Service_Case</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>CaseClose-Close Case Layout</layout>
-        <recordType>Case.Task</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CaseInteraction-Case Feed Layout</layout>
@@ -4381,27 +4349,7 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>Case.Incident</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Case.Problem</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Case.Question</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
         <recordType>Case.Service_Case</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Case.Task</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
