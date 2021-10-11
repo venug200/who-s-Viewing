@@ -321,15 +321,15 @@
     <picklistValues>
         <picklist>Type</picklist>
         <values>
-            <fullName>Feature Request</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Problem</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Task</fullName>
             <default>false</default>
         </values>
     </picklistValues>

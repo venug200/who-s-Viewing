@@ -12,6 +12,11 @@
         <label>Feature Request</label>
     </standardValue>
     <standardValue>
+        <fullName>Task</fullName>
+        <default>false</default>
+        <label>Task</label>
+    </standardValue>
+    <standardValue>
         <fullName>Question</fullName>
         <default>false</default>
         <label>Question</label>
