@@ -146,7 +146,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CassiseLicenceValidFrom__pc</field>
+                <field>CassieLicenceValidFrom__pc</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
