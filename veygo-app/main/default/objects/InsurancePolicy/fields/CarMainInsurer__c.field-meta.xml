@@ -3,9 +3,167 @@
     <fullName>CarMainInsurer__c</fullName>
     <externalId>false</externalId>
     <label>Car main insurer</label>
-    <length>255</length>
     <required>false</required>
     <trackHistory>false</trackHistory>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AA</fullName>
+                <default>false</default>
+                <label>AA</label>
+            </value>
+            <value>
+                <fullName>Admiral Group</fullName>
+                <default>false</default>
+                <label>Admiral Group</label>
+            </value>
+            <value>
+                <fullName>Aviva</fullName>
+                <default>false</default>
+                <label>Aviva</label>
+            </value>
+            <value>
+                <fullName>AXA/Swift Cover</fullName>
+                <default>false</default>
+                <label>AXA/Swift Cover</label>
+            </value>
+            <value>
+                <fullName>Bell</fullName>
+                <default>false</default>
+                <label>Bell</label>
+            </value>
+            <value>
+                <fullName>Churchill</fullName>
+                <default>false</default>
+                <label>Churchill</label>
+            </value>
+            <value>
+                <fullName>Co-Op</fullName>
+                <default>false</default>
+                <label>Co-Op</label>
+            </value>
+            <value>
+                <fullName>Diamond</fullName>
+                <default>false</default>
+                <label>Diamond</label>
+            </value>
+            <value>
+                <fullName>Direct Line</fullName>
+                <default>false</default>
+                <label>Direct Line</label>
+            </value>
+            <value>
+                <fullName>Elephant</fullName>
+                <default>false</default>
+                <label>Elephant</label>
+            </value>
+            <value>
+                <fullName>Endsleigh</fullName>
+                <default>false</default>
+                <label>Endsleigh</label>
+            </value>
+            <value>
+                <fullName>E-sure</fullName>
+                <default>false</default>
+                <label>E-sure</label>
+            </value>
+            <value>
+                <fullName>First Central</fullName>
+                <default>false</default>
+                <label>First Central</label>
+            </value>
+            <value>
+                <fullName>GoSkippy</fullName>
+                <default>false</default>
+                <label>GoSkippy</label>
+            </value>
+            <value>
+                <fullName>Hastings</fullName>
+                <default>false</default>
+                <label>Hastings</label>
+            </value>
+            <value>
+                <fullName>Liverpool Victoria - LV</fullName>
+                <default>false</default>
+                <label>Liverpool Victoria - LV</label>
+            </value>
+            <value>
+                <fullName>Marks and Spencer</fullName>
+                <default>false</default>
+                <label>Marks and Spencer</label>
+            </value>
+            <value>
+                <fullName>More Than</fullName>
+                <default>false</default>
+                <label>More Than</label>
+            </value>
+            <value>
+                <fullName>OneCall</fullName>
+                <default>false</default>
+                <label>OneCall</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Privilege</fullName>
+                <default>false</default>
+                <label>Privilege</label>
+            </value>
+            <value>
+                <fullName>Quote me happy</fullName>
+                <default>false</default>
+                <label>Quote me happy</label>
+            </value>
+            <value>
+                <fullName>RAC</fullName>
+                <default>false</default>
+                <label>RAC</label>
+            </value>
+            <value>
+                <fullName>Saga</fullName>
+                <default>false</default>
+                <label>Saga</label>
+            </value>
+            <value>
+                <fullName>Sheila&apos;s Wheels</fullName>
+                <default>false</default>
+                <label>Sheila&apos;s Wheels</label>
+            </value>
+            <value>
+                <fullName>Swinton</fullName>
+                <default>false</default>
+                <label>Swinton</label>
+            </value>
+            <value>
+                <fullName>Tesco</fullName>
+                <default>false</default>
+                <label>Tesco</label>
+            </value>
+            <value>
+                <fullName>Tradesure</fullName>
+                <default>false</default>
+                <label>Tradesure</label>
+            </value>
+            <value>
+                <fullName>Tradewise</fullName>
+                <default>false</default>
+                <label>Tradewise</label>
+            </value>
+            <value>
+                <fullName>Tradex</fullName>
+                <default>false</default>
+                <label>Tradex</label>
+            </value>
+            <value>
+                <fullName>Zurich</fullName>
+                <default>false</default>
+                <label>Zurich</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>
