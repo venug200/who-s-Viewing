@@ -2,6 +2,31 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
+        <fullName>Claim</fullName>
+        <default>false</default>
+        <label>Claim</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Complaint</fullName>
+        <default>false</default>
+        <label>Complaint</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Decline</fullName>
+        <default>false</default>
+        <label>Decline</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GDPR</fullName>
+        <default>false</default>
+        <label>GDPR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
         <fullName>Problem</fullName>
         <default>false</default>
         <label>Problem</label>
