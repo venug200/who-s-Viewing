@@ -36,6 +36,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.County__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.CustomerId__c</field>
         <readable>true</readable>
@@ -1513,6 +1518,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.NumTimesPurchased__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Occupation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
