@@ -261,5 +261,217 @@
                 <label>UNEMPLOYED</label>
             </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>ADMINISTRATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>AGRICULTURE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>ANIMAL CARE &amp; VETERINARY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>BANKING &amp; FINANCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>COMMUNITY &amp; SOCIAL WORKERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>COMPUTER SCIENCE/IT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>CUSTOMER SERVICE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>DIPLOMAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>DRIVERS/TRANSPORT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>EDUCATION &amp; TEACHING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>EMERGENCY SERVICES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>ENGINEERING, ARCHITECTURE &amp; MANUFACTURING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>HAIR &amp; BEAUTY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>HOSPITALITY, FOOD, LEISURE &amp; TOURISM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>JUDGE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>LAW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>MANAGEMENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>MEDIA, CREATIVE ARTS &amp; MUSIC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>MEDICINE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>MILITARY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>MOTOR TRADE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>NURSING, HEALTH &amp; WELLBEING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>OFFICE JOBS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>OTHER - SKILLED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>OTHER - UN-SKILLED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>POLITICIAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>RESEARCH &amp; ACADEMIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>RETAIL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>SALES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>SKILLED PHYSICAL WORKERS &amp; CONSTRUCTION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <valueName>TRANSLATOR, WRITER &amp; JOURNALISM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Employed</controllingFieldValue>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>SPORTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>A-LEVEL OR EQUIVALENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>ACCOUNTANCY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>ART &amp; DESIGN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>BUSINESS STUDIES &amp; MANAGEMENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>EARTH &amp; ENVIRONMENTAL SCIENCES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>ENGLISH LANGUAGE, LITERATURE &amp; JOURNALISM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>HISTORY &amp; CLASSICAL STUDIES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>MATHEMATICS, ECONOMICS &amp; PHYSICAL SCIENCES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>MODERN LANGUAGES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>OTHER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>PHILOSOPHY, POLITICS, THEOLOGY &amp; RELIGION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>SCIENCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>SOCIAL STUDIES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Student</controllingFieldValue>
+            <valueName>SOCIOLOGY, PSYCHOLOGY &amp; ANTHROPOLOGY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>HOUSE PERSON/PARENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>NOT EMPLOYED DUE TO DISABILITY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>RETIRED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>UNEMPLOYED</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>
