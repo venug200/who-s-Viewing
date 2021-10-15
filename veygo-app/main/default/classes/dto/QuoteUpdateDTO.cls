@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : matteo.iacucci@emea.merkleinc.com
  * @group             : 
- * @last modified on  : 2021-08-09
+ * @last modified on  : 2021-08-26
  * @last modified by  : matteo.iacucci@emea.merkleinc.com
 **/
 public class QuoteUpdateDTO {
@@ -60,6 +60,7 @@ public class QuoteUpdateDTO {
 		public Integer engineSize;
 		public String insuranceGroup;
 		public String mainInsurer;
+        public String registration;
 	}
 
 	public class Underwriting {
@@ -68,10 +69,10 @@ public class QuoteUpdateDTO {
 	}
 
 	public class Financials {
-		public Integer initialPrice;
-		public Integer price;
-		public Integer priceBeforeTax;
-		public Integer tax;
+		public Decimal initialPrice;
+		public Decimal price;
+		public Decimal priceBeforeTax;
+		public Decimal tax;
 		public Integer excess;
 		public String discountCode;
 	}

@@ -82,7 +82,8 @@ public with sharing class QuotePolicyUpsertMapper {
 		'value' => 'CarValue__c',
 		'engineSize' => 'Car_Engine_Size__c',
 		'insuranceGroup' => 'Car_Insurance_Group__c',
-		'mainInsurer' => 'CarMainInsurer__c'
+		'mainInsurer' => 'CarMainInsurer__c',
+        'registration' => 'Registration_Number__c'
 	};
 
 	public static Map<String, String> quoteUpdateFinancialsLeadMapping = new Map<String, String>{
@@ -166,7 +167,8 @@ public with sharing class QuotePolicyUpsertMapper {
 		'value' => 'CarValue__c',
 		'engineSize' => 'Car_Engine_Size__c',
 		'insuranceGroup' => 'Car_Insurance_Group__c',
-		'mainInsurer' => 'CarMainInsurer__c'
+		'mainInsurer' => 'CarMainInsurer__c',
+        'registration' => 'Registration_Number__c'
 	};
 
 	public static Map<String, String> quoteUpdateFinancialsOpportunityMapping = new Map<String, String>{
@@ -250,7 +252,8 @@ public with sharing class QuotePolicyUpsertMapper {
 		'value' => 'CarValue__c',
 		'engineSize' => 'Car_Engine_Size__c',
 		'insuranceGroup' => 'Car_Insurance_Group__c',
-		'mainInsurer' => 'CarMainInsurer__c'
+		'mainInsurer' => 'CarMainInsurer__c',
+        'registration' => 'Registration_Number__c'
 	};
 
 	public static Map<String, String> quoteUpdateFinancialsPolicyMapping = new Map<String, String>{

@@ -83,7 +83,8 @@ public class QuoteUpdateDTO_Test {
 		'      \"value\": 0,'+
 		'      \"engineSize\": 0,'+
 		'      \"insuranceGroup\": \"string\",'+
-		'      \"mainInsurer\": \"string\"'+
+		'      \"mainInsurer\": \"string\",'+
+        '      \"registration\": \"string\"'+
 		'    }'+
 		'  }'+
 		'}';

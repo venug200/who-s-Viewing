@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Birthdate_16_Years_Old</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(ISBLANK (PersonBirthdate), 
+IF( DATE( 2000 , MONTH( PersonBirthdate ) , DAY( PersonBirthdate ) ) &lt;= DATE( 2000 , MONTH( TODAY() ) , DAY( TODAY() ) ),
+YEAR (Today()) - YEAR ( PersonBirthdate ),
+YEAR (Today()) - YEAR ( PersonBirthdate ) -1 ) &lt; 16)</errorConditionFormula>
+    <errorDisplayField>PersonBirthdate</errorDisplayField>
+    <errorMessage>Customer cannot be younger than 16 years.</errorMessage>
+</ValidationRule>

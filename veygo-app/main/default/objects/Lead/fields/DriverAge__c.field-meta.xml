@@ -2,7 +2,11 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>DriverAge__c</fullName>
     <externalId>false</externalId>
-    <formula>FLOOR((TODAY() - DriverDateOfBirth__c) / 365)</formula>
+    <formula>IF( NOT( ISBLANK( DriverDateOfBirth__c ) ) ,
+  IF( DATE( 2000 , MONTH( DriverDateOfBirth__c ) , DAY( DriverDateOfBirth__c ) ) &lt;= DATE( 2000 , MONTH( TODAY() ) , DAY( TODAY() ) ),
+     YEAR (Today()) - YEAR ( DriverDateOfBirth__c ),
+     YEAR (Today()) - YEAR ( DriverDateOfBirth__c ) -1 ),
+  null)</formula>
     <label>Driver age</label>
     <precision>18</precision>
     <required>false</required>

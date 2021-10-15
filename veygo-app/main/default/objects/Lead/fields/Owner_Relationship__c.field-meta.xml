@@ -3,9 +3,42 @@
     <fullName>Owner_Relationship__c</fullName>
     <externalId>false</externalId>
     <label>Owner Relationship</label>
-    <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>fa</fullName>
+                <default>true</default>
+                <label>Other Family</label>
+            </value>
+            <value>
+                <fullName>fr</fullName>
+                <default>false</default>
+                <label>Friend</label>
+            </value>
+            <value>
+                <fullName>pa</fullName>
+                <default>false</default>
+                <label>Parent</label>
+            </value>
+            <value>
+                <fullName>ot</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>sp</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>co</fullName>
+                <default>false</default>
+                <label>Colleague</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>

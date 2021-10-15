@@ -57,7 +57,7 @@ public with sharing class QuotePolicyUpsertHelper {
 					
 		}catch(Exception e){
 			//handling of the exception
-			logger.error('processQuoteUpsert() : 500 returned, Exception: ' + e.getMessage(), e);
+			logger.error('processQuotePolicyUpsert() : 500 returned, Exception: ' + e.getMessage(), e);
 
 			Map<String, String> responseBody = new Map<String, String>();
 			responseBody.put('error', e.getMessage());

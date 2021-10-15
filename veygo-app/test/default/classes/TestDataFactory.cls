@@ -35,7 +35,9 @@ public class TestDataFactory {
 			RecordTypeId = personAccountRecordTypeId,
 			LastName = lastName,
 			PersonEmail = lastName + '@test.com',
-			CognitoId__c = 'Cognito_' + lastName
+			CognitoId__c = 'Cognito_' + lastName,
+            PersonBirthdate = date.valueOf('2000-07-29'),
+            License_Number__c = 'JONES859319TS8AD '
 		);
 
 		return new TestDataFactory((SObject) a);

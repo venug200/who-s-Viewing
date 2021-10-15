@@ -152,7 +152,8 @@ public class QuotePolicyUpsert_Test {
 		'      \"value\": 0,'+
 		'      \"engineSize\": 0,'+
 		'      \"insuranceGroup\": \"string\",'+
-		'      \"mainInsurer\": \"string\"'+
+		'      \"mainInsurer\": \"string\",'+
+        '      \"registration\": \"string\"'+
 		'    }'+
 		'  }'+
 		'}';
@@ -170,6 +171,7 @@ public class QuotePolicyUpsert_Test {
 		Test.stopTest();
 		System.assertEquals(200, response.statusCode, 'processQuoteUpdatedLead() Unexpected response status code');
 		Map<String, String> res = (Map<String, String>) JSON.deserialize(response.responseBody.toString(), Map<String, String>.class);
+        System.assertEquals('string', [SELECT Registration_Number__c FROM Lead LIMIT 1].Registration_Number__c);
 		System.assertEquals([SELECT Id FROM Lead LIMIT 1].Id, res.get('leadId'), 'processQuoteUpdatedLead() Wrong lead id');
 
 	}
@@ -253,7 +255,8 @@ public class QuotePolicyUpsert_Test {
 		'      \"value\": 0,'+
 		'      \"engineSize\": 0,'+
 		'      \"insuranceGroup\": \"string\",'+
-		'      \"mainInsurer\": \"string\"'+
+		'      \"mainInsurer\": \"string\",'+
+        '      \"registration\": \"string\"'+
 		'    }'+
 		'  }'+
 		'}';
@@ -359,7 +362,8 @@ public class QuotePolicyUpsert_Test {
 		'      \"value\": 0,'+
 		'      \"engineSize\": 0,'+
 		'      \"insuranceGroup\": \"string\",'+
-		'      \"mainInsurer\": \"string\"'+
+		'      \"mainInsurer\": \"string\",'+
+        '      \"registration\": \"string\"'+
 		'    }'+
 		'  }'+
 		'}';
@@ -454,7 +458,7 @@ public class QuotePolicyUpsert_Test {
 		'      \"lastName\": \"string\",'+
 		'      \"email\": \"user@example.com\",'+
 		'      \"phoneNumber\": \"string\",'+
-		'      \"dateOfBirth\": \"2021-07-29\",'+
+		'      \"dateOfBirth\": \"2000-07-29\",'+
 		'      \"occupationType\": \"string\",'+
 		'      \"occupation\": \"string\",'+
 		'      \"postcode\": \"string\",'+
@@ -468,7 +472,8 @@ public class QuotePolicyUpsert_Test {
 		'      \"value\": 0,'+
 		'      \"engineSize\": 0,'+
 		'      \"insuranceGroup\": \"string\",'+
-		'      \"mainInsurer\": \"string\"'+
+		'      \"mainInsurer\": \"string\",'+
+        '      \"registration\": \"string\"'+
 		'    }'+
 		'  }'+
 		'}';
@@ -490,6 +495,7 @@ public class QuotePolicyUpsert_Test {
 		Test.stopTest();
 		System.assertEquals(200, response.statusCode, 'processQuoteSaleCompleted() Unexpected response status code');
 		Map<String, String> res = (Map<String, String>) JSON.deserialize(response.responseBody.toString(), Map<String, String>.class);
+        System.assertEquals('string', [SELECT Registration_Number__c FROM InsurancePolicy LIMIT 1].Registration_Number__c);
 		System.assertEquals([SELECT Id, Policy_Number_Id__c FROM InsurancePolicy LIMIT 1].Policy_Number_Id__c, res.get('policyNumber'), 'processQuoteSaleCompleted() Wrong policy number id');
 		System.assertEquals([SELECT Id, Policy_Number_Id__c FROM InsurancePolicy LIMIT 1].Id, res.get('policyId'), 'processQuoteSaleCompleted() Wrong policy id');
 	}
