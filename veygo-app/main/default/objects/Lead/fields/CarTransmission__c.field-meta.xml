@@ -3,9 +3,22 @@
     <fullName>CarTransmission__c</fullName>
     <externalId>false</externalId>
     <label>Car Transmission</label>
-    <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>a</fullName>
+                <default>false</default>
+                <label>Automatic</label>
+            </value>
+            <value>
+                <fullName>m</fullName>
+                <default>false</default>
+                <label>Manual</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>
