@@ -263,11 +263,20 @@ public with sharing class QuotePolicyUpsertService {
 	* @return Object 
 	**/
 	private Object getLeadFieldValue(String dtoKey, String field, Map<String, Object> quoteInfo){
-		if(getLeadFieldType(field) == Schema.DisplayType.DATE){
+		if(getLeadFieldType(field) == Schema.DisplayType.DATE 
+			&& quoteInfo.get(dtoKey) != null){
+			
 			return Date.valueOf((String)quoteInfo.get(dtoKey));
 		}
-		if(getLeadFieldType(field) == Schema.DisplayType.DATETIME){
+		if(getLeadFieldType(field) == Schema.DisplayType.DATETIME
+			&& quoteInfo.get(dtoKey) != null){
+			
 			return Datetime.valueOf(((String)quoteInfo.get(dtoKey)).replace('T',' '));
+		}
+		if(getLeadFieldType(field) == Schema.DisplayType.Boolean
+			&& quoteInfo.get(dtoKey) != null){
+			
+			return Boolean.valueOf(((String)quoteInfo.get(dtoKey)));
 		}
 		if(dtoKey == 'failureReasons'){
 			return String.valueOf(quoteInfo.get(dtoKey));
@@ -284,10 +293,14 @@ public with sharing class QuotePolicyUpsertService {
 	* @return Object 
 	**/
 	private Object getOpportunityFieldValue(String dtoKey, String field, Map<String, Object> quoteInfo){
-		if(getOpportunityFieldType(field) == Schema.DisplayType.DATE){
+		if(getOpportunityFieldType(field) == Schema.DisplayType.DATE 
+			&& quoteInfo.get(dtoKey) != null){
+
 			return Date.valueOf((String)quoteInfo.get(dtoKey));
 		}
-		if(getOpportunityFieldType(field) == Schema.DisplayType.DATETIME){
+		if(getOpportunityFieldType(field) == Schema.DisplayType.DATETIME 
+			&& quoteInfo.get(dtoKey) != null){
+			
 			return Datetime.valueOf(((String)quoteInfo.get(dtoKey)).replace('T',' '));
 		}
 		if(dtoKey == 'failureReasons'){

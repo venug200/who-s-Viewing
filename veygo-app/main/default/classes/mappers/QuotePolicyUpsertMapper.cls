@@ -25,7 +25,8 @@ public with sharing class QuotePolicyUpsertMapper {
  		'quoteId' => 'Quote_Number__c',
  		'licenceType' => 'License_Type__c',
  		'postcode' => 'Postcode__c',
- 		'dateOfBirth' => 'OwnerDateOfBirth__c'
+ 		'dateOfBirth' => 'OwnerDateOfBirth__c',
+		'isDriverOwner' => 'IsDriverOwner__c'
  	};
 
 	public static Map<String, String> quoteStartOpportunityMapping = new Map<String, String>{
