@@ -3247,11 +3247,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Lead.Owner_PostCode__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Lead.Owner_Relationship__c</field>
         <readable>false</readable>
     </fieldPermissions>

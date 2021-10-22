@@ -56,7 +56,7 @@ public with sharing class QuotePolicyUpsertMapper {
 		'dateOfBirth' => 'OwnerDateOfBirth__c',
 		'occupationType' => 'OwnerOccupationType__c',
 		'occupation' => 'OwnerOccupation__c',
-		'postcode' => 'Owner_PostCode__c',
+		'postcode' => 'OwnerPostcode__c',
 		'relationship' => 'Owner_Relationship__c'
 	};
 
