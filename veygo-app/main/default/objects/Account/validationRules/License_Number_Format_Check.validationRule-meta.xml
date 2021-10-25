@@ -2,8 +2,7 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>License_Number_Format_Check</fullName>
     <active>true</active>
-    <errorConditionFormula>$Organization.Id == &apos;00D4L000000FZod&apos; &amp;&amp;
-NOT(REGEX(License_Number__c, &apos;[A-Z0-9]{5}\\d[0156]\\d([0][1-9]|[12]\\d|3[01])\\d[A-Z0-9]{3}[A-Z]{2}&apos;))</errorConditionFormula>
+    <errorConditionFormula>NOT(REGEX(License_Number__c, &apos;[A-Z0-9]{5}\\d[0156]\\d([0][1-9]|[12]\\d|3[01])\\d[A-Z0-9]{3}[A-Z]{2}&apos;))</errorConditionFormula>
     <errorDisplayField>License_Number__c</errorDisplayField>
     <errorMessage>License Number is not in good format.</errorMessage>
 </ValidationRule>
