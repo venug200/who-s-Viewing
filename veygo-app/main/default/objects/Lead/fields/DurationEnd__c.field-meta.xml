@@ -5,5 +5,5 @@
     <label>Duration end</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <type>Date</type>
+    <type>DateTime</type>
 </CustomField>
