@@ -10,24 +10,24 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Full UK Manual</fullName>
+                <fullName>ukm</fullName>
                 <default>false</default>
-                <label>Full UK Manual</label>
+                <label>Full GB Manual</label>
             </value>
             <value>
-                <fullName>Full UK Automatic</fullName>
-                <default>false</default>
-                <label>Full UK Automatic</label>
-            </value>
-            <value>
-                <fullName>Provisional Licence</fullName>
+                <fullName>ukp</fullName>
                 <default>false</default>
                 <label>Provisional Licence</label>
             </value>
             <value>
-                <fullName>Licence issued outside the UK</fullName>
+                <fullName>uka</fullName>
                 <default>false</default>
-                <label>Licence issued outside the UK</label>
+                <label>Full GB Automatic</label>
+            </value>
+            <value>
+                <fullName>nuk</fullName>
+                <default>false</default>
+                <label>Licence issued outside the GB</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -31,7 +31,7 @@ public class QuoteUpdateDTO {
 		public String lastName;
 		public String email;
 		public String phoneNumber;
-		public Date dateOfBirth;
+		public String dateOfBirth;
 		public String occupationType;
 		public String occupation;
 		public String postcode;
