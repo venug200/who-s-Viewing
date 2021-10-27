@@ -11,7 +11,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>fa</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>Other Family</label>
             </value>
             <value>
