@@ -229,7 +229,7 @@ public with sharing class QuotePolicyUpsertService {
 		for(String dtoKey : quoteInfoMap.keySet()){
 			field = mapper.get(dtoKey);
 			if(field == null){ continue; }
-			
+
 			Object value = getOpportunityFieldValue(dtoKey, field, quoteInfoMap);
 			o.put(field, value);			
 		}
@@ -263,6 +263,9 @@ public with sharing class QuotePolicyUpsertService {
 	* @return Object 
 	**/
 	private Object getLeadFieldValue(String dtoKey, String field, Map<String, Object> quoteInfo){
+		if(quoteInfo.get(dtoKey) == '') {
+			return null;
+		}
 		if(getLeadFieldType(field) == Schema.DisplayType.DATE 
 			&& quoteInfo.get(dtoKey) != null){
 			
@@ -276,7 +279,7 @@ public with sharing class QuotePolicyUpsertService {
 		if(getLeadFieldType(field) == Schema.DisplayType.Boolean
 			&& quoteInfo.get(dtoKey) != null){
 			
-			return Boolean.valueOf(((String)quoteInfo.get(dtoKey)));
+			return quoteInfo.get(dtoKey);
 		}
 		if(dtoKey == 'failureReasons'){
 			return String.valueOf(quoteInfo.get(dtoKey));
@@ -296,7 +299,6 @@ public with sharing class QuotePolicyUpsertService {
 		if(quoteInfo.get(dtoKey) == '') {
 			return null;
 		}
-		
 		if(getOpportunityFieldType(field) == Schema.DisplayType.DATE 
 			&& quoteInfo.get(dtoKey) != null){
 

@@ -17,7 +17,7 @@ public class QuoteStartDTO {
 		public String licenceType; //UKM, UKA, UKP, NUK
 		public String postcode;
 		public Date dateOfBirth;
-		public String isDriverOwner;
+		public Boolean isDriverOwner;
 	}
 
 	public static QuoteStartDTO parse(String json) {
