@@ -346,6 +346,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>OwnerDateOfBirth__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>OwnerOccupationType__c</field>
             </layoutItems>
             <layoutItems>
