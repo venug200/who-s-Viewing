@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Hours_Purchased__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Hours Purchased</label>
+    <summarizedField>InsurancePolicy.DurationHours__c</summarizedField>
+    <summaryForeignKey>InsurancePolicy.NameInsuredId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>
