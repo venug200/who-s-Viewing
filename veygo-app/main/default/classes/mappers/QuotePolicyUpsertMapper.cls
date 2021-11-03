@@ -114,7 +114,6 @@ public with sharing class QuotePolicyUpsertMapper {
 		'dateOfBirth' => 'DriverDateOfBirth__c',
 		'occupationType' => 'DriverOccupationType__c',
 		'occupation' => 'DriverOccupation__c',
-		'isDriverOwner' => 'IsDriverOwner__c',
 		'licenceType' => 'LicenceType__c', //UKM, UKA, UKP, NUK
 		'licenceCountry' => 'LicenceCountry__c',
 		'licenceNumber' => 'License_Number__c',
@@ -200,7 +199,6 @@ public with sharing class QuotePolicyUpsertMapper {
 		'dateOfBirth' => 'DriverDateOfBirth__c',
 		'occupationType' => 'DriverOccupationType__c',
 		'occupation' => 'DriverOccupation__c',
-		'isDriverOwner' => 'IsDriverOwner__c',
 		'licenceType' => 'LicenceType__c', //UKM, UKA, UKP, NUK
 		'licenceCountry' => 'LicenceCountry__c',
 		'licenceNumber' => 'License_Number__c',
