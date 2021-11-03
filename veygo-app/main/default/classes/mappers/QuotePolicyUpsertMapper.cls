@@ -25,7 +25,7 @@ public with sharing class QuotePolicyUpsertMapper {
  		'quoteId' => 'Quote_Number__c',
  		'licenceType' => 'License_Type__c',
  		'postcode' => 'Postcode__c',
- 		'dateOfBirth' => 'OwnerDateOfBirth__c',
+ 		'dateOfBirth' => 'DriverDateOfBirth__c',
 		'isDriverOwner' => 'IsDriverOwner__c'
  	};
 
@@ -34,12 +34,14 @@ public with sharing class QuotePolicyUpsertMapper {
  		'quoteId' => 'Quote_Number__c',
  		'licenceType' => 'LicenceType__c',
  		'postcode' => 'OwnerPostcode__c',
- 		'dateOfBirth' => 'OwnerDateOfBirth__c'
+ 		'dateOfBirth' => 'DriverDateOfBirth__c',
+		'isDriverOwner' => 'IsDriverOwner__c'
  	};
 
 	public static Map<String, String> quoteUpdateLeadMapping = new Map<String, String>{
 		'product' => 'Product_Name__c', //LDP, OTC, DTC
 		'quoteId' => 'Quote_Number__c',
+		'isDriverOwner' => 'IsDriverOwner__c',
 		'startDate' => 'Quote_Date__c',
 		'endDate' => 'QuoteEnd__c',
 		'policyNumber' => 'Policy_Number__c',
@@ -126,12 +128,12 @@ public with sharing class QuotePolicyUpsertMapper {
 	public static Map<String, String> quoteUpdateOpportunityMapping = new Map<String, String>{
 		'product' => 'Product_Name__c', //LDP, OTC, DTC
 		'quoteId' => 'Quote_Number__c',
+		'isDriverOwner' => 'IsDriverOwner__c',
 		'startDate' => 'Actual_Quote_Creation_Date__c',
 		'endDate' => 'QuoteEnd__c',
 		'policyNumber' => 'Policy_Number__c',
 		'documentDeliveryPreference' => 'DocumentDeliveryPreference__c',
-		'purchased' => 'Purchased__c'
-		
+		'purchased' => 'Purchased__c'	
 	};
 
 	public static Map<String, String> quoteUpdateOwnerOpportunityMapping = new Map<String, String>{
@@ -212,6 +214,7 @@ public with sharing class QuotePolicyUpsertMapper {
 	public static Map<String, String> quoteUpdatePolicyMapping = new Map<String, String>{
 		'product' => 'Product_Name__c', //LDP, OTC, DTC
 		'quoteId' => 'Quote_Number__c',
+		'isDriverOwner' => 'IsDriverOwner__c',
 		'startDate' => 'Start_Date__c',
 		'endDate' => 'End_Date__c',
 		'policyNumber' => 'Name',
