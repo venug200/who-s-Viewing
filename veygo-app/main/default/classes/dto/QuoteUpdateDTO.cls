@@ -93,7 +93,7 @@ public class QuoteUpdateDTO {
 		public String licenceCountry;
 		public String licenceNumber;
 		public Integer numberOfClaims;
-		public Boolean hasConvictions;
+		public String hasConvictions;
 		public Integer yearsNCB;
 	}
 
