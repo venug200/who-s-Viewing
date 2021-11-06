@@ -411,10 +411,6 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Vehicle_ABI_Idetifier__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>CarMake__c</field>
             </layoutItems>
             <layoutItems>
