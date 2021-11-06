@@ -10,14 +10,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>true</fullName>
+                <fullName>True</fullName>
                 <default>false</default>
-                <label>Yes</label>
+                <label>True</label>
             </value>
             <value>
-                <fullName>false</fullName>
+                <fullName>False</fullName>
                 <default>false</default>
-                <label>No</label>
+                <label>False</label>
             </value>
         </valueSetDefinition>
     </valueSet>
