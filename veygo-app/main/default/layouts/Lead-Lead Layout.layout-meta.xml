@@ -425,10 +425,6 @@
                 <behavior>Readonly</behavior>
                 <field>CarTransmission__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Color__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
