@@ -442,7 +442,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Discount</field>
+                <field>Discount__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
