@@ -103,8 +103,8 @@
         </connector>
     </assignments>
     <decisions>
-        <name>isChangedDecision10_myRule_9_AccountId</name>
-        <label>isChangedDecision10_myRule_9_AccountId</label>
+        <name>isChangedDecision10_myRule_9_ContactId</name>
+        <label>isChangedDecision10_myRule_9_ContactId</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
@@ -112,7 +112,7 @@
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>isChangedRule_10_myRule_9_AccountId</name>
+            <name>isChangedRule_10_myRule_9_ContactId</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>myVariable_old</leftValueReference>
@@ -122,16 +122,16 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>myVariable_old.AccountId</leftValueReference>
+                <leftValueReference>myVariable_old.ContactId</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>myVariable_current.AccountId</elementReference>
+                    <elementReference>myVariable_current.ContactId</elementReference>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myPreWaitDecision_myWait_myRule_12</targetReference>
             </connector>
-            <label>isChangedRule_10_myRule_9_AccountId</label>
+            <label>isChangedRule_10_myRule_9_ContactId</label>
         </rules>
     </decisions>
     <decisions>
@@ -496,7 +496,7 @@
                 <processMetadataValues>
                     <name>leftHandSideReferenceTo</name>
                     <value>
-                        <stringValue>Account</stringValue>
+                        <stringValue>Contact</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -517,7 +517,7 @@
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>isChangedRule_10_myRule_9_AccountId</leftValueReference>
+                <leftValueReference>isChangedRule_10_myRule_9_ContactId</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -526,7 +526,7 @@
             <connector>
                 <targetReference>myRule_9_A1</targetReference>
             </connector>
-            <label>Account Changed</label>
+            <label>Contact Changed</label>
         </rules>
     </decisions>
     <decisions>
@@ -982,7 +982,7 @@
             <label>Previously Met - Prev</label>
         </rules>
     </decisions>
-    <interviewLabel>Case_Update-11_InterviewLabel</interviewLabel>
+    <interviewLabel>Case_Update-13_InterviewLabel</interviewLabel>
     <label>Case_Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1287,7 +1287,7 @@
             <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_9_A1</name>
-        <label>Update Contact</label>
+        <label>Update Account</label>
         <locationX>900</locationX>
         <locationY>200</locationY>
         <connector>
@@ -1323,13 +1323,13 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Contact ID</stringValue>
+                    <stringValue>Account ID</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue>Contact</stringValue>
+                    <stringValue>Account</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -1338,9 +1338,9 @@
                     <stringValue>Reference</stringValue>
                 </value>
             </processMetadataValues>
-            <field>ContactId</field>
+            <field>AccountId</field>
             <value>
-                <elementReference>myVariable_current.Account.FinServ__PrimaryContact__c</elementReference>
+                <elementReference>myVariable_current.Contact.AccountId</elementReference>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -1478,7 +1478,7 @@
         </inputAssignments>
         <object>Case</object>
     </recordUpdates>
-    <startElementReference>isChangedDecision10_myRule_9_AccountId</startElementReference>
+    <startElementReference>isChangedDecision10_myRule_9_ContactId</startElementReference>
     <status>Active</status>
     <variables>
         <name>cancelWaits</name>
