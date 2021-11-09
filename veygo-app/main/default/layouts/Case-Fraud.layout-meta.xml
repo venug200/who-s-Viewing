@@ -18,15 +18,19 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>ContactId</field>
+                <field>AccountId</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>AccountId</field>
+                <field>ContactId</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SourceId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Routing_Id__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -81,10 +85,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>CreatedDate</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
                 <field>SuppliedEmail</field>
             </layoutItems>
             <layoutItems>
@@ -107,21 +107,19 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Reason</field>
+                <field>Case_Reason__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>AdditionalInformation__c</field>
             </layoutItems>
             <layoutItems>
-                <emptySpace>true</emptySpace>
-            </layoutItems>
-            <layoutItems>
-                <emptySpace>true</emptySpace>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Outcome__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CreatedDate</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>

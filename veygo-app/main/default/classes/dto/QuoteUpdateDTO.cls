@@ -21,6 +21,7 @@ public class QuoteUpdateDTO {
 		public Financials financials;
 		public Underwriting underwriting;
 		public String documentDeliveryPreference;
+		public Boolean isDriverOwner;
 		public Driver driver;
 		public Owner owner;
 		public Car car;
@@ -87,13 +88,12 @@ public class QuoteUpdateDTO {
 		public Date dateOfBirth;
 		public String occupationType;
 		public String occupation;
-		public Boolean isDriverOwner;
 		public Address address;
 		public String licenceType; //UKM, UKA, UKP, NUK
 		public String licenceCountry;
 		public String licenceNumber;
 		public Integer numberOfClaims;
-		public Boolean hasConvictions;
+		public String hasConvictions;
 		public Integer yearsNCB;
 	}
 

@@ -151,17 +151,41 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>EmailConsentDatetime__pc</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>PhoneConsent__pc</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Offers_And_Updates__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Surveys_And_Feedback__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Admiral_Marketing__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>EmailConsentDatetime__pc</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>PhoneConsentDatetime__pc</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Offers_And_Updates_Datetime__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Surveys_And_Feedback_Datetime__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Admiral_Marketing_Datetime__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -224,14 +248,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>RAF_Code__pc</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>GA_ListOrCountOfAnyOnSiteEvents__pc</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>FinServ__LifetimeValue__c</field>
             </layoutItems>
             <layoutItems>
@@ -241,6 +257,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>TestDate__pc</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CustomerLastEditedPersonalInfo__pc</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>CanEdit__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

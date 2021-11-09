@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CanEdit__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(CustomerLastEditedPersonalInfo__pc), true, false) || 
+IF(CustomerLastEditedPersonalInfo__pc &lt; NOW() - 30 , true, false) ||
+IF(CustomerLastEditedPersonalInfo__pc &gt;= NOW() - 30 , false, true)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Can Edit</label>
+    <type>Checkbox</type>
+</CustomField>
