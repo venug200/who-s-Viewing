@@ -4,11 +4,12 @@
     <deprecated>false</deprecated>
     <description>Concatenated shipping address field.</description>
     <externalId>false</externalId>
-    <formula>if(ISBLANK(Account.ShippingStreet), &quot;&quot; , Account.ShippingStreet &amp; br()) &amp;
-if(ISBLANK(Account.ShippingCity), &quot;&quot; , Account.ShippingCity&amp; &quot;, &quot;)&amp;
-if(ISBLANK(Account.ShippingState),  &quot;&quot; , Account.ShippingState&amp; &quot; &quot;)&amp;
-if(ISBLANK(Account.ShippingPostalCode), &quot;&quot; , Account.ShippingPostalCode &amp; br())  &amp;
-If(ISBLANK( Account.ShippingCountry), &quot;&quot; , Account.ShippingCountry)</formula>
+    <formula>if( AND( ISPICKVAL($User.LanguageLocaleKey, &quot;ja&quot;) , NOT( ISBLANK(Account.ShippingCountry )) ) , Account.ShippingCountry &amp; br(), &quot;&quot; ) &amp;
+            if(ISBLANK(Account.ShippingStreet), &quot;&quot; , Account.ShippingStreet &amp; br()) &amp;
+            if(ISBLANK(Account.ShippingCity), &quot;&quot; , Account.ShippingCity&amp; &quot;, &quot;)&amp;
+            if(ISBLANK(Account.ShippingState),  &quot;&quot; , Account.ShippingState&amp; &quot; &quot;)&amp;
+            if(ISBLANK(Account.ShippingPostalCode), &quot;&quot; , Account.ShippingPostalCode &amp; br())  &amp;
+            if( OR( ISPICKVAL($User.LanguageLocaleKey, &quot;ja&quot;) , ISBLANK(Account.ShippingCountry) ) , &quot;&quot; , Account.ShippingCountry)</formula>
     <label>Shipping Address</label>
     <required>false</required>
     <type>Text</type>

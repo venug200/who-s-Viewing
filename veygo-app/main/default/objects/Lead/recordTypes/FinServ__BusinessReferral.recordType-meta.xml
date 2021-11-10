@@ -6,6 +6,155 @@
     <description>A business or organization that is a commercial banking business referral​</description>
     <label>Business Referral</label>
     <picklistValues>
+        <picklist>CarHasInsurance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CarMainInsurer__c</picklist>
+        <values>
+            <fullName>AA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AXA%2FSwift Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admiral Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aviva</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Churchill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Co-Op</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diamond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elephant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endsleigh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GoSkippy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hastings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liverpool Victoria - LV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marks and Spencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>More Than</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OneCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Privilege</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote me happy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saga</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sheila%27s Wheels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swinton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tesco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tradesure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tradewise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tradex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zurich</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CarTransmission__c</picklist>
+        <values>
+            <fullName>a</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>m</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>FinServ__ExpressedInterest__c</picklist>
         <values>
             <fullName>Checking Account</fullName>
@@ -53,6 +202,17 @@
         </values>
         <values>
             <fullName>Savings Account</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HasConvictions__c</picklist>
+        <values>
+            <fullName>False</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>True</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -206,25 +366,25 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Name</picklist>
+        <picklist>Owner_Relationship__c</picklist>
         <values>
-            <fullName>Dr%2E</fullName>
+            <fullName>co</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Mr%2E</fullName>
+            <fullName>fr</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Mrs%2E</fullName>
+            <fullName>ot</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Ms%2E</fullName>
+            <fullName>pa</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Prof%2E</fullName>
+            <fullName>sp</fullName>
             <default>false</default>
         </values>
     </picklistValues>
