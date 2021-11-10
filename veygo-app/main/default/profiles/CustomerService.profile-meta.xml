@@ -2007,7 +2007,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>InsurancePolicy.DocumentDeliveryPreferrence__c</field>
+        <field>InsurancePolicy.DocumentDeliveryPreference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
