@@ -87,6 +87,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>myWaitAssignment_myWait_myRule_14</name>
+        <label>myWaitAssignment_myWait_myRule_14</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>cancelWaits</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>myWait_myRule_14</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myPreWaitDecision_myWait_myRule_12</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>myWaitEvent_myWait_myRule_12_event_0_postWaitExecutionAssignment</name>
         <label>myWaitEvent_myWait_myRule_12_event_0_postWaitExecutionAssignment</label>
         <locationX>0</locationX>
@@ -102,13 +118,29 @@
             <targetReference>myWait_myRule_12</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>myWaitEvent_myWait_myRule_14_event_0_postWaitExecutionAssignment</name>
+        <label>myWaitEvent_myWait_myRule_14_event_0_postWaitExecutionAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myWaitEvent_myWait_myRule_14_event_0_postActionExecutionVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myWait_myRule_14</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>isChangedDecision10_myRule_9_ContactId</name>
         <label>isChangedDecision10_myRule_9_ContactId</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myPreWaitDecision_myWait_myRule_12</targetReference>
+            <targetReference>myPreWaitDecision_myWait_myRule_14</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
@@ -129,7 +161,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myPreWaitDecision_myWait_myRule_12</targetReference>
+                <targetReference>myPreWaitDecision_myWait_myRule_14</targetReference>
             </connector>
             <label>isChangedRule_10_myRule_9_ContactId</label>
         </rules>
@@ -200,6 +232,9 @@
         <label>myDecision11</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision13</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_12</name>
@@ -239,6 +274,58 @@
                 <targetReference>myRule_12_pmetdec</targetReference>
             </connector>
             <label>Status Solved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision13</name>
+        <label>myDecision13</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_14</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_14_pmetdec</targetReference>
+            </connector>
+            <label>Status Pending</label>
         </rules>
     </decisions>
     <decisions>
@@ -555,6 +642,31 @@
         </rules>
     </decisions>
     <decisions>
+        <name>myPostWaitDecision_myWaitEvent_myWait_myRule_14_event_0</name>
+        <label>myPostWaitDecision_myWaitEvent_myWait_myRule_14_event_0</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myWaitEvent_myWait_myRule_14_event_0_postWaitExecutionAssignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myPostWaitRule_myWaitEvent_myWait_myRule_14_event_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_current.LastModifiedDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myWaitEvent_myWait_myRule_14_event_0_SA1</targetReference>
+            </connector>
+            <label>myPostWaitRule_myWaitEvent_myWait_myRule_14_event_0</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>myPreWaitDecision_myWait_myRule_12</name>
         <label>myPreWaitDecision_myWait_myRule_12</label>
         <locationX>0</locationX>
@@ -601,6 +713,55 @@
                 <targetReference>myDecision</targetReference>
             </connector>
             <label>myPreWaitRule_myWait_myRule_12</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myPreWaitDecision_myWait_myRule_14</name>
+        <label>myPreWaitDecision_myWait_myRule_14</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myWaitAssignment_myWait_myRule_14</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myPreWaitRule_myWait_myRule_14</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myPreWaitDecision_myWait_myRule_12</targetReference>
+            </connector>
+            <label>myPreWaitRule_myWait_myRule_14</label>
         </rules>
     </decisions>
     <decisions>
@@ -659,6 +820,67 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Solved</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_14_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1400</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myWait_myRule_14</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_14_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myWait_myRule_14</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_14_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
                 </rightValue>
             </conditions>
             <label>Previously Met - Prev</label>
@@ -982,7 +1204,7 @@
             <label>Previously Met - Prev</label>
         </rules>
     </decisions>
-    <interviewLabel>Case_Update-13_InterviewLabel</interviewLabel>
+    <interviewLabel>Case_Update-2_InterviewLabel</interviewLabel>
     <label>Case_Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1478,6 +1700,139 @@
         </inputAssignments>
         <object>Case</object>
     </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Case]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myWaitEvent_myWait_myRule_14_event_0_SA1</name>
+        <label>Case Solved</label>
+        <locationX>1400</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myWaitEvent_myWait_myRule_14_event_0_postWaitExecutionAssignment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Solved</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
     <startElementReference>isChangedDecision10_myRule_9_ContactId</startElementReference>
     <status>Active</status>
     <variables>
@@ -1505,6 +1860,16 @@
     </variables>
     <variables>
         <name>myWaitEvent_myWait_myRule_12_event_0_postActionExecutionVariable</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>myWaitEvent_myWait_myRule_14_event_0_postActionExecutionVariable</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -1570,6 +1935,65 @@
                 </value>
             </inputParameters>
             <label>myWaitEvent_myWait_myRule_12_event_0</label>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>myWait_myRule_14</name>
+        <label>myWait_myRule_14</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>defaultLabel</defaultConnectorLabel>
+        <waitEvents>
+            <processMetadataValues>
+                <name>inputParameterType</name>
+                <value>
+                    <stringValue>referenced</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>myWaitEvent_myWait_myRule_14_event_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myWaitEvent_myWait_myRule_14_event_0_postActionExecutionVariable</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myPostWaitDecision_myWaitEvent_myWait_myRule_14_event_0</targetReference>
+            </connector>
+            <eventType>DateRefAlarmEvent</eventType>
+            <inputParameters>
+                <name>TimeTableColumnEnumOrId</name>
+                <value>
+                    <stringValue>Case</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>EntityObjectId</name>
+                <value>
+                    <elementReference>myVariable_current.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffsetUnit</name>
+                <value>
+                    <stringValue>Hours</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffset</name>
+                <value>
+                    <numberValue>24.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeFieldColumnEnumOrId</name>
+                <value>
+                    <stringValue>LastModifiedDate</stringValue>
+                </value>
+            </inputParameters>
+            <label>myWaitEvent_myWait_myRule_14_event_0</label>
         </waitEvents>
     </waits>
 </Flow>
