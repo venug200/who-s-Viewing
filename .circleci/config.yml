@@ -1,8 +1,28 @@
 version: 2.1
 orbs:
   sfdx: circleci/salesforce-sfdx@2.2.0
+  ghpr: narrativescience/ghpr@1.1.2
+  slack: circleci/slack@4.5
 
 jobs:
+  validate-pr-title:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - run:
+          name: Skip if no PR linked
+          command: |
+            if [[ -z $CIRCLE_PULL_REQUEST ]]; then
+              circleci step halt
+            fi
+      - ghpr/get-pr-info
+      - run:
+          name: Validate PR Title
+          command: |
+            echo "GITHUB_PR_TITLE: $GITHUB_PR_TITLE"
+            PR_TITLE_REGEX='^\([A-Z]{3} AB#[0-9]{1,5}\) .*'
+            [[ $GITHUB_PR_TITLE =~ $PR_TITLE_REGEX ]] && echo "PR title is valid" && exit 0
+            exit 1
   validate:
     executor: sfdx/default
     steps:
@@ -11,14 +31,62 @@ jobs:
       - sfdx/auth:
           defaultusername: $SALESFORCE_USERNAME
           instanceUrl: https://test.salesforce.com
-      
       - run:
-          name: Validate 
-          command: sfdx force:source:deploy  --checkonly --sourcepath veygo-app --targetusername $SALESFORCE_USERNAME --testlevel RunLocalTests 
+          name: Validate
+          command: sfdx force:source:deploy --checkonly --sourcepath veygo-app --targetusername $SALESFORCE_USERNAME --testlevel RunLocalTests
+  deploy:
+    executor: sfdx/default
+    steps:
+      - checkout
+      - sfdx/install
+      - sfdx/auth:
+          defaultusername: $SALESFORCE_USERNAME
+          instanceUrl: https://test.salesforce.com
+      - run:
+          name: Deploy
+          command: sfdx force:source:deploy --sourcepath veygo-app --targetusername $SALESFORCE_USERNAME --testlevel RunLocalTests
+      - slack/notify:
+          event: fail
+          channel: salesforce-integration
+          mentions: '@here'
+          template: JOB_FAILURE_TEMPLATE
+          branch_pattern: master
+  post-release-notes:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - run:
+          name: Get PR Title
+          command: |
+            GITHUB_LAST_COMMIT_INFO=$(git show $CIRCLE_SHA1)
+            GITHUB_PR_TITLE_DIRTY=${GITHUB_LAST_COMMIT_INFO##*$'\n'}
+            read GITHUB_PR_TITLE \<<< $( echo ${GITHUB_PR_TITLE_DIRTY} | awk -F"|" '{ sub(/^[ \t]+/, ""); print }' )
+            echo "GITHUB_PR_TITLE: $GITHUB_PR_TITLE"
+            echo "export GITHUB_PR_TITLE='$GITHUB_PR_TITLE'" >> $BASH_ENV
+      - run:
+          name: Set Azure Boards URL
+          command: |
+            TMP_STRING=${GITHUB_PR_TITLE%%)*}
+            AZURE_BOARDS_ID=${TMP_STRING:8}
+            AZURE_BOARDS_URL="https://dev.azure.com/Veygo/Veygo/_workitems/edit/${AZURE_BOARDS_ID}"
+            echo "AZURE_BOARDS_URL: $AZURE_BOARDS_URL"
+            echo "export AZURE_BOARDS_URL='$AZURE_BOARDS_URL'" >> $BASH_ENV
+      - slack/notify:
+          event: pass
+          channel: salesforce-integration
+          template: SUCCESSFUL_DEPLOYMENT_TEMPLATE
 
 workflows:
   main:
     jobs:
+      - validate-pr-title:
+          context:
+            - github
+          filters:
+            branches:
+              ignore:
+                - master
       - validate:
           context:
             - SALESFORCE_DEV
@@ -26,3 +94,24 @@ workflows:
             branches:
               ignore:
                 - master
+      - deploy:
+          name: deploy-dev
+          context:
+            - SALESFORCE_DEV
+            - slack
+          filters:
+            branches:
+              only:
+                - master
+      - deploy:
+          name: deploy-qa
+          context:
+            - SALESFORCE_QA
+            - slack
+          requires:
+            - deploy-dev
+      - post-release-notes:
+          context:
+            - slack
+          requires:
+            - deploy-qa
