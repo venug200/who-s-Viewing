@@ -3,6 +3,62 @@ orbs:
   sfdx: circleci/salesforce-sfdx@2.2.0
   ghpr: narrativescience/ghpr@1.1.2
   slack: circleci/slack@4.5
+  cypress: cypress-io/cypress@1.29.0
+
+target-preprod-smokes: &target-preprod-smokes
+  domain: preprod-veygo.com
+  context:
+    - github
+    - smoke-test
+    - slack
+
+commands:
+  alert-failed-build:
+    steps:
+      - run: exit 0
+      - slack/notify:
+          event: fail
+          channel: salesforce-integration
+          mentions: '@here'
+          template: JOB_FAILURE_TEMPLATE
+          branch_pattern: master
+  run-smoke-tests:
+    parameters:
+      path:
+        type: string
+      product:
+        type: string
+      subdomain:
+        type: enum
+        default: 'quote'
+        enum: ['quote', 'account', 'login']
+      domain:
+        type: string
+    steps:
+      - run:
+          name: Clone Monorepo
+          command: |
+            cd ..
+            git clone git@github.com:Rentecarlo/csi.git
+      - cypress/install:
+          cache-key: 'yarn-packages-{{ arch }}-{{ checksum "<< parameters.path >>/cypress/yarn.lock" }}'
+          yarn: true
+          working_directory: << parameters.path >>/cypress
+          no-workspace: true
+      - run:
+          name: Run Cypress tests
+          command: |
+            CYPRESS_baseUrl=https://<< parameters.subdomain >>.<< parameters.domain >> yarn cypress:run --env failfast=true --reporter junit --reporter-options mochaFile=../results/smoke/<< parameters.product >>/result.[hash].xml --spec "tests/smoke/<< parameters.product >>/**"
+          working_directory: << parameters.path >>/cypress
+      - store_test_results:
+          path: << parameters.path >>/results/smoke
+      - store_artifacts:
+          path: << parameters.path >>/results/smoke
+      - store_artifacts:
+          path: << parameters.path >>/cypress/videos
+      - store_artifacts:
+          path: << parameters.path >>/cypress/screenshots
+      - alert-failed-build
 
 jobs:
   validate-pr-title:
@@ -76,6 +132,51 @@ jobs:
           event: pass
           channel: salesforce-integration
           template: SUCCESSFUL_DEPLOYMENT_TEMPLATE
+  dtc-smoke:
+    circleci_ip_ranges: true
+    docker:
+      - image: cypress/base:14
+    resource_class: medium
+    parameters:
+      domain:
+        type: string
+    steps:
+      - checkout
+      - run-smoke-tests:
+          path: ~/csi/frontends/packages/new-frontend
+          product: driverTempCover
+          subdomain: quote
+          domain: << parameters.domain >>
+  account-smoke:
+    circleci_ip_ranges: true
+    docker:
+      - image: cypress/base:14
+    resource_class: medium
+    parameters:
+      domain:
+        type: string
+    steps:
+      - checkout
+      - run-smoke-tests:
+          path:  ~/csi/frontends/packages/account
+          product: account
+          subdomain: account
+          domain: << parameters.domain >>
+  auth-smoke:
+    circleci_ip_ranges: true
+    docker:
+      - image: cypress/base:14
+    resource_class: medium
+    parameters:
+      domain:
+        type: string
+    steps:
+      - checkout
+      - run-smoke-tests:
+          path: ~/csi/frontends/packages/auth-frontend
+          product: login
+          subdomain: login
+          domain: << parameters.domain >>
 
 workflows:
   main:
@@ -110,8 +211,22 @@ workflows:
             - slack
           requires:
             - deploy-dev
+      - dtc-smoke:
+          requires:
+            - deploy-qa
+          <<: *target-preprod-smokes
+      - account-smoke:
+          requires:
+            - deploy-qa
+          <<: *target-preprod-smokes
+      - auth-smoke:
+          requires:
+            - deploy-qa
+          <<: *target-preprod-smokes
       - post-release-notes:
           context:
             - slack
           requires:
-            - deploy-qa
+            - dtc-smoke
+            - account-smoke
+            - auth-smoke
