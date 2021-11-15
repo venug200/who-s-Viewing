@@ -20,7 +20,8 @@ public class QuotePolicyUpsert_Test {
 		'    \"quoteId\": \"testQuoteId\",'+
 		'    \"licenceType\": \"UKM\",'+
 		'    \"postcode\": \"string\",'+
-		'    \"dateOfBirth\": \"1990-03-01\"'+
+		'    \"dateOfBirth\": \"1990-03-01\",'+
+        '    \"isDriverOwner\": false'+
 		'  }'+
 		'}';
 		//set the rest context
@@ -35,9 +36,9 @@ public class QuotePolicyUpsert_Test {
 		Test.startTest();
 		QuotePolicyUpsertRestResource.processPost();
 		Test.stopTest();
-		// System.assertEquals(200, response.statusCode, 'processQuoteStartLead(). Unexpected response status code');
+		System.assertEquals(200, response.statusCode, 'processQuoteStartLead(). Unexpected response status code');
 		Map<String, String> res = (Map<String, String>) JSON.deserialize(response.responseBody.toString(), Map<String, String>.class);
-		// System.assertEquals([SELECT Id FROM Lead LIMIT 1].Id, res.get('leadId'), 'Wrong lead id');
+		System.assertEquals([SELECT Id FROM Lead LIMIT 1].Id, res.get('leadId'), 'Wrong lead id');
 
 	}
 
@@ -53,7 +54,8 @@ public class QuotePolicyUpsert_Test {
 		'    \"quoteId\": \"testQuoteId\",'+
 		'    \"licenceType\": \"UKM\",'+
 		'    \"postcode\": \"string\",'+
-		'    \"dateOfBirth\": \"1990-03-01\"'+
+		'    \"dateOfBirth\": \"1990-03-01\",'+
+        '    \"isDriverOwner\": false'+
 		'  }'+
 		'}';
 
@@ -87,6 +89,7 @@ public class QuotePolicyUpsert_Test {
 		'    \"startDate\": \"2021-07-29T14:19:59.000Z\",'+
 		'    \"endDate\": \"2021-07-29T14:19:59.000Z\",'+
 		'    \"purchased\": true,'+
+        '    \"isDriverOwner\": false,'+
 		'    \"financials\": {'+
 		'      \"initialPrice\": 0,'+
 		'      \"price\": 0,'+
@@ -169,10 +172,10 @@ public class QuotePolicyUpsert_Test {
 		Test.startTest();
 		QuotePolicyUpsertRestResource.processPost();
 		Test.stopTest();
-		// System.assertEquals(200, response.statusCode, 'processQuoteUpdatedLead() Unexpected response status code');
+		System.assertEquals(200, response.statusCode, 'processQuoteUpdatedLead() Unexpected response status code');
 		Map<String, String> res = (Map<String, String>) JSON.deserialize(response.responseBody.toString(), Map<String, String>.class);
-        // System.assertEquals('string', [SELECT Registration_Number__c FROM Lead LIMIT 1].Registration_Number__c);
-		// System.assertEquals([SELECT Id FROM Lead LIMIT 1].Id, res.get('leadId'), 'processQuoteUpdatedLead() Wrong lead id');
+        System.assertEquals('string', [SELECT Registration_Number__c FROM Lead LIMIT 1].Registration_Number__c);
+		System.assertEquals([SELECT Id FROM Lead LIMIT 1].Id, res.get('leadId'), 'processQuoteUpdatedLead() Wrong lead id');
 
 	}
 
@@ -190,6 +193,7 @@ public class QuotePolicyUpsert_Test {
 		'    \"startDate\": \"2021-07-29T14:19:59.000Z\",'+
 		'    \"endDate\": \"2021-07-29T14:19:59.000Z\",'+
 		'    \"purchased\": true,'+
+        '    \"isDriverOwner\": false,'+
 		'    \"financials\": {'+
 		'      \"initialPrice\": 0,'+
 		'      \"price\": 0,'+
@@ -297,6 +301,7 @@ public class QuotePolicyUpsert_Test {
 		'    \"startDate\": \"2021-07-29T14:19:59.000Z\",'+
 		'    \"endDate\": \"2021-07-29T14:19:59.000Z\",'+
 		'    \"purchased\": true,'+
+        '    \"isDriverOwner\": false,'+
 		'    \"financials\": {'+
 		'      \"initialPrice\": 0,'+
 		'      \"price\": 0,'+
@@ -407,6 +412,7 @@ public class QuotePolicyUpsert_Test {
 		'    \"startDate\": \"2021-07-29T14:19:59.000Z\",'+
 		'    \"endDate\": \"2021-07-29T14:19:59.000Z\",'+
 		'    \"purchased\": true,'+
+        '    \"isDriverOwner\": false,'+
 		'    \"financials\": {'+
 		'      \"initialPrice\": 0,'+
 		'      \"price\": 0,'+
@@ -434,6 +440,7 @@ public class QuotePolicyUpsert_Test {
 		'      \"dateOfBirth\": \"2021-07-29\",'+
 		'      \"occupationType\": \"string\",'+
 		'      \"occupation\": \"string\",'+
+        '      \"isDriverOwner\": true,'+
 		'      \"address\": {'+
 		'        \"flatNo\": \"string\",'+
 		'        \"houseNo\": \"string\",'+
@@ -535,7 +542,7 @@ public class QuotePolicyUpsert_Test {
 		System.assertEquals('Cancelled', [SELECT Id, Status FROM InsurancePolicy LIMIT 1].Status,  'processPolicyCanceled() Policy were not cancelled');
 	}
 
-	@isTest
+    @isTest
 	public static void processQuoteUpsertException(){
 	   
 		//set the rest context
@@ -608,4 +615,4 @@ public class QuotePolicyUpsert_Test {
 		Test.stopTest();
 		System.assertEquals(400, response.statusCode, 'processQuoteUpsertEventTypeNoHandled() Unexpected response status code');
 	}
-}
+} 

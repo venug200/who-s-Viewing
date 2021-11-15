@@ -3,19 +3,23 @@
     <fullName>Main for Case</fullName>
     <isActive>true</isActive>
     <values>
-        <fullName>Closed</fullName>
-        <default>false</default>
-    </values>
-    <values>
-        <fullName>Escalated</fullName>
-        <default>false</default>
-    </values>
-    <values>
         <fullName>New</fullName>
         <default>true</default>
     </values>
     <values>
-        <fullName>On Hold</fullName>
+        <fullName>Open</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Pending</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Solved</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed</fullName>
         <default>false</default>
     </values>
 </BusinessProcess>

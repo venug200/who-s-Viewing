@@ -88,25 +88,239 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Name</picklist>
+        <picklist>LicenceType__c</picklist>
         <values>
-            <fullName>Dr%2E</fullName>
+            <fullName>nuk</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Mr%2E</fullName>
+            <fullName>uka</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Mrs%2E</fullName>
+            <fullName>ukm</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Ms%2E</fullName>
+            <fullName>ukp</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OccupationType__c</picklist>
+        <values>
+            <fullName>employed</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Prof%2E</fullName>
+            <fullName>other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>student</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Occupation__c</picklist>
+        <values>
+            <fullName>A-LEVEL OR EQUIVALENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACCOUNTANCY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADMINISTRATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AGRICULTURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ANIMAL CARE %26 VETERINARY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ART %26 DESIGN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BANKING %26 FINANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BUSINESS STUDIES %26 MANAGEMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMUNITY %26 SOCIAL WORKERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMPUTER SCIENCE%2FIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CUSTOMER SERVICE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIPLOMAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DRIVERS%2FTRANSPORT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EARTH %26 ENVIRONMENTAL SCIENCES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDUCATION %26 TEACHING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMERGENCY SERVICES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENGINEERING%2C ARCHITECTURE %26 MANUFACTURING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENGLISH LANGUAGE%2C LITERATURE %26 JOURNALISM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HAIR %26 BEAUTY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HISTORY %26 CLASSICAL STUDIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOSPITALITY%2C FOOD%2C LEISURE %26 TOURISM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOUSE PERSON%2FPARENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JUDGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MANAGEMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MATHEMATICS%2C ECONOMICS %26 PHYSICAL SCIENCES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEDIA%2C CREATIVE ARTS %26 MUSIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEDICINE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MILITARY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MODERN LANGUAGES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MOTOR TRADE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT EMPLOYED DUE TO DISABILITY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NURSING%2C HEALTH %26 WELLBEING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFFICE JOBS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER - SKILLED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER - UN-SKILLED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PHILOSOPHY%2C POLITICS%2C THEOLOGY %26 RELIGION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POLITICIAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RESEARCH %26 ACADEMIA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RETAIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RETIRED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SALES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCIENCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKILLED PHYSICAL WORKERS %26 CONSTRUCTION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOCIAL STUDIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOCIOLOGY%2C PSYCHOLOGY %26 ANTHROPOLOGY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPORTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRANSLATOR%2C WRITER %26 JOURNALISM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNEMPLOYED</fullName>
             <default>false</default>
         </values>
     </picklistValues>

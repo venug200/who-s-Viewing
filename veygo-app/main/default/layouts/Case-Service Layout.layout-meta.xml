@@ -176,7 +176,7 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Case.SendEmail</actionName>
+            <actionName>Case.EmailCustom</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>
@@ -206,11 +206,6 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewEvent</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>6</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>FeedItem.ContentNote</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
@@ -219,6 +214,11 @@
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>8</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>NewEvent</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.ContentPost</actionName>
@@ -283,13 +283,6 @@
         <relatedList>Claims</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>SOLUTION.ISSUE</fields>
-        <fields>SOLUTION.SOLUTION_NUMBER</fields>
-        <fields>SOLUTION.STATUS</fields>
-        <fields>CORE.USERS.ALIAS</fields>
-        <relatedList>RelatedSolutionList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -323,7 +316,7 @@
     <showRunAssignmentRulesCheckbox>true</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>true</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h26000001g43p</masterLabel>
+        <masterLabel>00h8E000001kuFE</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

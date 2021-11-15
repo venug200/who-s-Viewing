@@ -1632,6 +1632,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>EmailMessage.Case_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>InsurancePolicy.AffiliateId__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3278,11 +3283,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.CarModel__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.CarReg__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
