@@ -5,5 +5,5 @@
     <label>Provisional Licence Confirmation Date</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <type>DateTime</type>
+    <type>Date</type>
 </CustomField>
