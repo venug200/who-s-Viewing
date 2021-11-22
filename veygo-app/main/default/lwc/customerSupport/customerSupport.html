@@ -1,0 +1,175 @@
+<template>
+    <lightning-accordion allow-multiple-sections-open
+                            class="example-accordion"
+                            onsectiontoggle={handleToggleSection}
+                            active-section-name="A">
+        <lightning-accordion-section name="A" label="Customer Support">
+            <!--Solution1-->
+            <!--<div if:true={customerSupportRecords} class="slds-p-top_small">
+                <div>
+                    <lightning-datatable
+                            key-field="Id"
+                            data={data}
+                            hide-checkbox-column
+                            columns={columns}
+                            onrowaction={handleRowAction}>
+                    </lightning-datatable>
+                </div>
+            </div>-->
+            <!--Solution2-->
+            <div if:true={customerSupportRecords} class="slds-p-top-small">
+                <template for:each={data} for:item="item">
+                    <div key={item.Id} class="slds-m-top_x-small slds-box" >
+                        <div key={item.Id} class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_3-of-12">
+                                <span>Customer support:</span>
+                            </div>
+                            <div class="slds-col slds-size_7-of-12">
+                                <lightning-input label="Customer support:" value={item.Email_Address__c} disabled variant="label-hidden"></lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12">
+                                <lightning-button-icon data-id={item.Id} onclick={handleEditCustomerSupport} icon-name="utility:edit" alternative-text="Edit" class="slds-m-left_xx-small" title="Edit"></lightning-button-icon>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12">
+                                <lightning-button-icon data-id={item.Id} onclick={handleDeleteCustomerSupport} icon-name="utility:delete" alternative-text="Delete" class="slds-m-left_xx-small" title="Delete"></lightning-button-icon>
+                            </div>
+                        </div>
+                        <!--<hr key={item.Id} class="dividerNoMargin" />-->
+                        <div key={item.Id} class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_3-of-12">
+                                <span>Customer support category:</span>
+                            </div>
+                            <div class="slds-col slds-size_4-of-12">
+                                <lightning-combobox
+                                    name="Category"
+                                    label="Customer support category:"
+                                    class="input-required"
+                                    value={item.Category__c}
+                                    placeholder="Select a category"
+                                    options={categorys}
+                                    disabled
+                                    variant="label-hidden"
+                                ></lightning-combobox>
+                            </div>
+                        </div>
+                        <!--<hr key={item.Id} class="dividerNoMargin" />-->
+                        <div key={item.Id} class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_3-of-12">
+                                <span>Customer support type:</span>
+                            </div>
+                            <div class="slds-col slds-size_8-of-12">
+                                <lightning-input label="Customer support type:" disabled value={item.Type__c} variant="label-hidden"></lightning-input>
+                            </div>
+                        </div>
+                        <!--<hr key={item.Id} class="dividerNoMargin" />-->
+                        <div key={item.Id} class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_3-of-12">
+                                <span>Start date:</span>
+                            </div>
+                            <div class="slds-col slds-size_3-of-12">
+                                <lightning-input type="date" label="Start date:" disabled value={item.Start_date__c} variant="label-hidden"> </lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                <span>End date:</span>
+                            </div>
+                            <div class="slds-col slds-size_3-of-12">
+                                <lightning-input type="date" label="End date:" disabled value={item.End_date__c} variant="label-hidden"> </lightning-input>
+                            </div>
+                        </div>
+                        <!--<hr key={item.Id} class="dividerNoMargin" />-->
+                        <div key={item.Id} class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_3-of-12">
+                                <span>Customer support details:</span>
+                            </div>
+                            <div class="slds-col slds-size_9-of-12">
+                                <lightning-textarea name="details" disabled value={item.Details__c} label="Customer support details:" maxlength="255" message-when-too-long="A maximum of 255 characters are allowed in details." variant="label-hidden"></lightning-textarea>
+                            </div>
+                        </div>
+                        <!--<hr key={item.Id} class="dividerNoMargin" />-->
+                        <div key={item.Id} class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_4-of-12">
+                                <lightning-input type="checkbox" disabled checked={item.Scripting_complete__c} label="Scripting complete"> </lightning-input>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <!---->
+            <div if:true={customerSupportButton} class="slds-align_absolute-center slds-p-top_small">
+                <lightning-button variant="neutral" onclick={addNewCustomerSupport} label="Add another Customer Support" icon-name="utility:add" class="slds-var-m-left_x-small"></lightning-button>
+            </div>
+            <!---->
+            <div if:true={newCustomerSupport} class="slds-p-top_small">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_3-of-12">
+                        <span>Customer support:</span>
+                    </div>
+                    <div class="slds-col slds-size_8-of-12">
+                        <lightning-input type="email" label="Customer support:" value={emailAddress} maxlength="255" onchange={handleCustomerSupportChange} required variant="label-hidden"></lightning-input>
+                    </div>
+                </div>
+                <hr class="divider" />
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_3-of-12">
+                        <span>Customer support category:</span>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12">
+                        <lightning-combobox
+                            name="Category"
+                            label="Customer support category:"
+                            required
+                            value={category}
+                            placeholder="Select a category"
+                            options={categorys}
+                            onchange={handleCategoryChange}
+                            variant="label-hidden"
+                        ></lightning-combobox>
+                    </div>
+                </div>
+                <hr class="divider" />
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_3-of-12">
+                        <span>Customer support type:</span>
+                    </div>
+                    <div class="slds-col slds-size_8-of-12">
+                        <lightning-input label="Customer support type:" value={type} onchange={handleTypeChange} variant="label-hidden"></lightning-input>
+                    </div>
+                </div>
+                <hr class="divider" />
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_3-of-12">
+                        <span>Start date:</span>
+                    </div>
+                    <div class="slds-col slds-size_3-of-12">
+                        <lightning-input type="date" label="Start date:" value={startDate} onchange={handleStartDateChange} required variant="label-hidden"> </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_2-of-12">
+                        <span>End date:</span>
+                    </div>
+                    <div class="slds-col slds-size_3-of-12">
+                        <lightning-input type="date" label="End date:" value={endDate} min={startDate} onchange={handleEndDateChange} required variant="label-hidden"> </lightning-input>
+                    </div>
+                </div>
+                <hr class="divider" />
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_3-of-12">
+                        <span>Customer support details:</span>
+                    </div>
+                    <div class="slds-col slds-size_9-of-12">
+                        <lightning-textarea name="details" required value={details} label="Customer support details:" onchange={handleDetailsChange} maxlength="255" message-when-too-long="A maximum of 255 characters are allowed in details." variant="label-hidden"></lightning-textarea>
+                    </div>
+                </div>
+                <hr class="divider" />
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_4-of-12">
+                        <lightning-input type="checkbox" onchange={handleScriptingCompleteChange} checked={scriptingComplete} label="Scripting complete"> </lightning-input>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters slds-align_absolute-center slds-p-top_small">
+                    <lightning-button variant="neutral" onclick={cancelCustomerSupport} label="Cancel" icon-name="utility:close" class="slds-var-m-left_x-small"></lightning-button>
+                    <lightning-button variant="neutral" onclick={saveCustomerSupport} label="Save" icon-name="utility:save" class="slds-var-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>

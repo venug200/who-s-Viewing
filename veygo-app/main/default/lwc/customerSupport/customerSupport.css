@@ -1,0 +1,11 @@
+.example-accordion{
+  --sds-c-accordion-summary-color-background: rgb(243,242,242);
+}
+.divider { 
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+.dividerNoMargin { 
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
