@@ -89,7 +89,7 @@ jobs:
           instanceUrl: https://test.salesforce.com
       - run:
           name: Validate
-          command: sfdx force:source:deploy --checkonly --sourcepath veygo-app --targetusername $SALESFORCE_USERNAME --testlevel RunLocalTests
+          command: sfdx force:source:deploy --checkonly --sourcepath rflib-fs,rflib,sfpczTrigger,veygo-app --targetusername $SALESFORCE_USERNAME --testlevel RunLocalTests
   deploy:
     executor: sfdx/default
     steps:
@@ -100,7 +100,7 @@ jobs:
           instanceUrl: https://test.salesforce.com
       - run:
           name: Deploy
-          command: sfdx force:source:deploy --sourcepath veygo-app --targetusername $SALESFORCE_USERNAME --testlevel RunLocalTests
+          command: sfdx force:source:deploy --sourcepath rflib-fs,rflib,sfpczTrigger,veygo-app --targetusername $SALESFORCE_USERNAME --testlevel RunLocalTests
       - slack/notify:
           event: fail
           channel: salesforce-integration
@@ -189,12 +189,17 @@ workflows:
               ignore:
                 - master
       - validate:
+          name: validate-dev
           context:
             - SALESFORCE_DEV
-          filters:
-            branches:
-              ignore:
-                - master
+          requires:
+            - validate-pr-title
+      - validate:
+          name: validate-qa
+          context:
+            - SALESFORCE_QA
+          requires:
+            - validate-pr-title
       - deploy:
           name: deploy-dev
           context:
@@ -209,8 +214,10 @@ workflows:
           context:
             - SALESFORCE_QA
             - slack
-          requires:
-            - deploy-dev
+          filters:
+            branches:
+              only:
+                - master
       - dtc-smoke:
           requires:
             - deploy-qa
