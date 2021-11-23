@@ -63,6 +63,10 @@
                 <behavior>Readonly</behavior>
                 <field>Total_Hours_Purchased__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Policy_Admin_URL__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
