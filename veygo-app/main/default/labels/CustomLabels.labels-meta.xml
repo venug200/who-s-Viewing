@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
+        <fullName>CustomerSupportAlertMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Support Alert Message</shortDescription>
+        <value>This customer may require additional support. Please see the Customer Support section for more details</value>
+    </labels>
+    <labels>
         <fullName>AccountFraudAlertMessage</fullName>
         <language>en_US</language>
         <protected>false</protected>
