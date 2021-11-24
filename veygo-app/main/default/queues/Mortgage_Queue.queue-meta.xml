@@ -3,12 +3,6 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <email>anthony2francis@yahoo.com</email>
     <name>Mortgage Queue</name>
-    <queueMembers>
-        <users>
-            <user>integration@00d8e000000gbixuaw.com</user>
-            <user>insightssecurity@00d8e000000gbixuaw.com</user>
-        </users>
-    </queueMembers>
     <queueSobject>
         <sobjectType>Lead</sobjectType>
     </queueSobject>
