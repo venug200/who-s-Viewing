@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>ConnectUnrelatedLWC</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Communication between two unrelated LWC</description>
+    <lightningMessageFields>
+        <fieldName>valueTo</fieldName>
+        <description>This is the value to communicate</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

@@ -7,4 +7,32 @@
         <shortDescription>Account Fraud Alert Message</shortDescription>
         <value>Attention! This Account has Fraud Case.</value>
     </labels>
+    <labels>
+        <fullName>CustomerSupportAlertMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Support Alert Message</shortDescription>
+        <value>This customer may require additional support. Please see the Customer Support section for more details</value>
+    </labels>
+    <labels>
+        <fullName>ProductionOrgID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductionOrgID</shortDescription>
+        <value>00D4L000000FZod</value>
+    </labels>
+    <labels>
+        <fullName>VeygoPreprodAdminBaseUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VeygoPreprodAdminBaseUrl</shortDescription>
+        <value>https://quote.preprod-veygo.com/admin</value>
+    </labels>
+    <labels>
+        <fullName>VeygoProductionAdminBaseUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VeygoProductionAdminBaseUrl</shortDescription>
+        <value>https://quote.veygo.com/admin</value>
+    </labels>
 </CustomLabels>

@@ -149,7 +149,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Upgrade license issue</fullName>
+            <fullName>Upgrade licence issue</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -245,29 +245,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Reason</picklist>
-        <values>
-            <fullName>Complex functionality</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Existing problem</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Instructions not clear</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>New problem</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>User didn%27t attend training</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>TaskType__c</picklist>
         <values>
             <fullName>Cancellation</fullName>
@@ -294,7 +271,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Change License Type</fullName>
+            <fullName>Change Licence Type</fullName>
             <default>false</default>
         </values>
         <values>
