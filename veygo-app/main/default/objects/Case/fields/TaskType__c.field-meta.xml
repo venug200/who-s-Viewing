@@ -43,9 +43,9 @@
                 <label>Change Customer Error</label>
             </value>
             <value>
-                <fullName>Change License Type</fullName>
+                <fullName>Change Licence Type</fullName>
                 <default>false</default>
-                <label>Change License Type</label>
+                <label>Change Licence Type</label>
             </value>
             <value>
                 <fullName>Change Private plate</fullName>

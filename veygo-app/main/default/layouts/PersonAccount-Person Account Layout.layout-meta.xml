@@ -123,7 +123,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>License Info</label>
+        <label>Licence Info</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>

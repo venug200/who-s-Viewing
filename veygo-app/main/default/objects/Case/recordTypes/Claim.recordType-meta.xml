@@ -149,7 +149,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Upgrade license issue</fullName>
+            <fullName>Upgrade licence issue</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -271,7 +271,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Change License Type</fullName>
+            <fullName>Change Licence Type</fullName>
             <default>false</default>
         </values>
         <values>
