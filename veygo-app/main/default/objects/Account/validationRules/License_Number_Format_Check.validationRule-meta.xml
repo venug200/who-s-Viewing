@@ -4,5 +4,5 @@
     <active>true</active>
     <errorConditionFormula>NOT(REGEX(License_Number__c, &apos;[A-Z0-9]{5}\\d[0156]\\d([0][1-9]|[12]\\d|3[01])\\d[A-Z0-9]{3}[A-Z]{2}&apos;))</errorConditionFormula>
     <errorDisplayField>License_Number__c</errorDisplayField>
-    <errorMessage>License Number is not in good format.</errorMessage>
+    <errorMessage>Licence Number is not in good format.</errorMessage>
 </ValidationRule>
